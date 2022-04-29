@@ -23,7 +23,8 @@ public class TorreJugador : Torre
         Altura++;
     }
 
-    public void AñadirATorre(object objeto)
+
+    public void AnadirATorre(object objeto)
     {
         if (objeto is Jugador)
         {
@@ -38,7 +39,7 @@ public class TorreJugador : Torre
                 listaJugador.Add(objeto);
             }
             else {
-                //throw new Exception("no se pueden añadir enemigos a la torre");
+                //throw new Exception("no se pueden a?adir enemigos a la torre");
             }
 
         }
