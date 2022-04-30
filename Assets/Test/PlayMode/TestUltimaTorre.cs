@@ -6,7 +6,7 @@ using UnityEngine.TestTools;
 
 public class TestUltimaTorre
 {
-    /
+    
     [UnityTest]
     public IEnumerator TestUltimaTorreWithEnumeratorPasses()
     {
