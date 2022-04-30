@@ -5,7 +5,7 @@ using UnityEngine;
 public class TorreJugador : Torre
 {
     Jugador jugador;
-    internal List<object> listaJugador;
+    public List<object> listaJugador;
     public TorreJugador(uint altura, Jugador jugador) : base(altura)
     {
         this.Altura = altura;

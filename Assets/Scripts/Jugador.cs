@@ -61,7 +61,7 @@ public class Jugador : ScriptableObject
     }
    
     //programar funcion atacar 
-    internal bool Atacar(Atacable target, TorreEnemigo torreEnemigo)
+    public bool Atacar(Atacable target, TorreEnemigo torreEnemigo)
     {
         bool victoria = false;
 
