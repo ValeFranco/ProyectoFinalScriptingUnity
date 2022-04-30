@@ -12,10 +12,10 @@ public class TestAumentaPoderPersonaje
         Jugador jugador = new Jugador(15, "Pruebita");
         TorreJugador torreJugador = new TorreJugador(3, jugador);
 
-        Atacable victoria = new Atacable(false, 3);
-        TorreEnemigo torreEnemigo = new TorreEnemigo(4, victoria);
+       // Atacable victoria = new Atacable(false, 3);
+        //TorreEnemigo torreEnemigo = new TorreEnemigo(4, victoria);
 
-        jugador.Atacar(victoria, torreEnemigo);
+        //jugador.Atacar(victoria, torreEnemigo);
 
         // Use the Assert class to test conditions.
         // Use yield to skip a frame.
