@@ -5,7 +5,7 @@ using UnityEngine;
 public class TorreEnemigo : Torre
 {
     Atacable atacable;
-    internal List<Atacable> listaAtacable;
+    public List<Atacable> listaAtacable;
     bool destruible;
     public TorreEnemigo(uint altura, Atacable atacable) : base(altura)
     {

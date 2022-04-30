@@ -12,7 +12,7 @@ public class TestGanaContraObstaculo
         Jugador jugador4 = new Jugador(15, "Pruebita");
         TorreJugador torreJugador = new TorreJugador(3, jugador4);
 
-        Atacable obstaculo = new Atacable(true, 3);
+        //Atacable obstaculo = new Atacable(true, 3);
         TorreEnemigo torreEnemigo = new TorreEnemigo(4, obstaculo);
 
         jugador4.Atacar(obstaculo, torreEnemigo);
