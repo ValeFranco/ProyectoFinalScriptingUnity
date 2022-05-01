@@ -81,7 +81,9 @@ public class Jugador : ScriptableObject
             if (target.poder > poder)
             {
                 victoria = false;
+
                 Salud();
+
                 return victoria;
             }
             if (target.poder == poder)
@@ -133,6 +135,7 @@ public class Jugador : ScriptableObject
         yield return new WaitForSeconds(transitionTime);
         SceneManager.LoadScene(sceneIndex);
     }
+  
     //movimiento
     //morision
 }
