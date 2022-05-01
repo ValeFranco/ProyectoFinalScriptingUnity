@@ -18,4 +18,14 @@ public class ControllerPickUp : MonoBehaviour
     {
         
     }
+
+    public void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.CompareTag("Player"))
+        {
+            collider.GetComponent<ControlJugador>().AtacarPickUp(pickup);
+            Destroy(gameObject);
+
+        }
+    }
 }

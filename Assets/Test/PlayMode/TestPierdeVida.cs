@@ -20,6 +20,6 @@ public class TestPierdeVida
         //torreJugador.Atacar(derrota, torreEnemigo);
 
         yield return new WaitForSeconds(12);
-        Assert.AreEqual(2, torreJugador.Jugador.vidas);
+        Assert.AreEqual(2, torreJugador.Jugador.Vidas);
     }
 }

@@ -22,4 +22,13 @@ public class ControlEnemigo : MonoBehaviour
     {
         
     }
+    public void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.CompareTag("Player"))
+        {
+            collider.GetComponent<ControlJugador>().AtacarEnemigo(enemigo);
+            //Destroy(gameObject); --esto esta en atacar
+
+        }
+    }
 }

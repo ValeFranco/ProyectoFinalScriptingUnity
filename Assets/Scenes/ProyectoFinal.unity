@@ -160,7 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemigo: {fileID: 11400000, guid: 0f57669efff5e254cb06f92ecd5ac6b2, type: 2}
-  poderUI: {fileID: 0}
+  poderUI: {fileID: 7584275285085538608}
 --- !u!212 &22270837
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -237,7 +237,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.33, y: 0}
@@ -997,6 +997,7 @@ GameObject:
   - component: {fileID: 1470464414}
   - component: {fileID: 1470464412}
   - component: {fileID: 1470464413}
+  - component: {fileID: 1470464415}
   m_Layer: 0
   m_Name: Pickup
   m_TagString: Untagged
@@ -1084,6 +1085,32 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1470464415
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470464411}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.06}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.7, y: 2.9}
+    newSize: {x: 2.7, y: 2.9}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.05, y: 2.49}
+  m_EdgeRadius: 0
 --- !u!1 &1643991275
 GameObject:
   m_ObjectHideFlags: 0
@@ -1165,7 +1192,7 @@ GameObject:
   - component: {fileID: 2113832649}
   m_Layer: 0
   m_Name: Jugador
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1251,7 +1278,6 @@ MonoBehaviour:
   jugador: {fileID: 11400000, guid: d46c9aa6994cdac40994e02b6659bf8a, type: 2}
   poderUI: {fileID: 829821343}
   barravida: {fileID: 181193650}
-  vida: 100
   vidaMaxima: 100
 --- !u!50 &2113832648
 Rigidbody2D:
@@ -1347,6 +1373,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fa52e8fc233dda48b84bd95ec692ea2, type: 3}
+--- !u!1 &7584275285085538608 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 244460867439928136, guid: 6e8325a57661ea6458d6236be377ce6c, type: 3}
+  m_PrefabInstance: {fileID: 7648446894321035896}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7584275285502688430 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 244460867022264022, guid: 6e8325a57661ea6458d6236be377ce6c, type: 3}
