@@ -34,14 +34,14 @@ public class TorreJugador : Torre
         {
             Atacable test = objeto as Atacable;
 
-            //if (!test.esObstaculo)
-            //{
-            //    listaJugador.Add(objeto);
-            //}
-            //else
-            //{
-            //    //throw new Exception("no se pueden a?adir enemigos a la torre");
-            //}
+            if (!test.esObstaculo)
+            {
+                listaJugador.Add(objeto);
+            }
+            else
+            {
+                //throw new Exception("no se pueden a?adir enemigos a la torre");
+            }
 
         }
     }

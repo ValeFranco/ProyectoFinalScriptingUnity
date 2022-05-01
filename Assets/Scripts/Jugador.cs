@@ -10,10 +10,9 @@ public class Jugador : ScriptableObject
     public string nombre;
     public byte vidas;
 
-    private Atacable atacable;
-    private TorreEnemigo torreEnenigo;
-   
-    
+    private TorreJugador torreJugador;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -65,44 +64,44 @@ public class Jugador : ScriptableObject
     {
         bool victoria = false;
 
-        //if (torreEnemigo.listaAtacable.IndexOf(target) == -1)
-        //{
-        //    //throw new Exception("el enemigo no está en esta torre");
-        //}
-        //if (target.esObstaculo == true)
-        //{
-        //    poder += target.poder;
-        //    victoria = true;
-        //    return victoria;
-        //}
-        //if (target.esObstaculo == false)
-        //{
-        //    if (target.poder > poder)
-        //    {
-        //        victoria = false;
-        //        vidas--;
-        //        return victoria;
-        //    }
-        //    if (target.poder == poder)
-        //    {
-        //        victoria = false;
-        //        vidas--;
-        //        return victoria;
-        //    }
-        //    else if (target.poder < poder)
-        //    {
-        //        victoria = true;
-        //        poder += target.poder;
-        //        //torreEnemigo.ReducirAltura(target);
-        //        //AumentarAltura();
+        if (torreEnemigo.listaAtacable.IndexOf(target) == -1)
+        {
+            //throw new Exception("el enemigo no está en esta torre");
+        }
+        if (target.esObstaculo == true)
+        {
+            poder += target.poder;
+            victoria = true;
+            return victoria;
+        }
+        if (target.esObstaculo == false)
+        {
+            if (target.poder > poder)
+            {
+                victoria = false;
+                vidas--;
+                return victoria;
+            }
+            if (target.poder == poder)
+            {
+                victoria = false;
+                vidas--;
+                return victoria;
+            }
+            else if (target.poder < poder)
+            {
+                victoria = true;
+                poder += target.poder;
+                torreEnemigo.ReducirAltura(target);
+                torreJugador.AumentarAltura();
 
-        //        //if (torreEnemigo.altura == 0 || torreEnemigo.listaAtacable.Count == 0)
-        //        //{
-        //        //    torreEnemigo = null;
-        //        //}
-        //        return victoria;
-        //    }
-        //}
+                if (torreEnemigo.altura == 0 || torreEnemigo.listaAtacable.Count == 0)
+                {
+                    torreEnemigo = null;
+                }
+                return victoria;
+            }
+        }
         return victoria;
     }
     //movimiento

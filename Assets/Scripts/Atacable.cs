@@ -21,7 +21,10 @@ public class Atacable : MonoBehaviour
             if (value > 0)
                 poder = value;
             else
-                throw new Exception("el poder debe ser mayor a cero");
+            {
+                // throw new Exception("el poder debe ser mayor a cero");
+            }
+
         }
     }
 
