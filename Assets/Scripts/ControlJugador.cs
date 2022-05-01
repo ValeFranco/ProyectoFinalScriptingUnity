@@ -31,10 +31,16 @@ public class ControlJugador : MonoBehaviour
     {
         //falta restaurar el poder al comenzar
         // gameOver.SetActive(false);
-        barraCanvas = GameObject.FindObjectOfType<BarraVida>();
-        
-        posicionClick = this.transform.position;
+
+        //condiciones iniciales Jugador:
         jugador.vidas = 3;
+        jugador.poder = jugador.basepoder;
+        //
+
+
+        barraCanvas = GameObject.FindObjectOfType<BarraVida>();
+        posicionClick = this.transform.position;
+       
         
         
     }
@@ -86,7 +92,7 @@ public class ControlJugador : MonoBehaviour
         {
             victoria = true;
             jugador.poder += enemigo.Poder;
-            enemigo.TorreEnemigo.ReducirAltura(enemigo);
+            //enemigo.TorreEnemigo.ReducirAltura(enemigo);
             //torreJugador.AumentarAltura();
             
 

@@ -7,7 +7,8 @@ using UnityEngine.SceneManagement;
 [CreateAssetMenu(fileName = "Crear Jugador", menuName = "Jugador")]
 public class Jugador : ScriptableObject
 {
-    public uint poder;
+    public uint basepoder;
+    internal uint poder;
     public string nombre;
     public int vidas;
     public bool muerto;
