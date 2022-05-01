@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Torre : MonoBehaviour
+
+public class Torre : ScriptableObject
 {
     public uint altura;
     internal uint Altura
@@ -23,15 +24,5 @@ public class Torre : MonoBehaviour
     {
         this.Altura = altura;
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
 }
