@@ -6,21 +6,28 @@ using UnityEngine.UI;
 public class ControlJugador : MonoBehaviour
 {
     [SerializeField] private Jugador jugador;
-    //[SerializeField] private Text poderUI;
+    [SerializeField] private GameObject poderUI;
 
     private float velocidad = 5f;
     private Vector2 posicionClick;
     private bool movimiento;
+
+    private void ActualizarVida()
+    {
+       poderUI.GetComponentInChildren<TextMesh>().text = jugador.poder.ToString();
+    }
     // Start is called before the first frame update
     void Start()
     {
-        //poderUI.text = jugador.poder.ToString();
+        
+
         posicionClick = this.transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetMouseButtonDown(0))
         {
             posicionClick = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -38,5 +45,7 @@ public class ControlJugador : MonoBehaviour
             movimiento = false;
         }
 
+        ActualizarVida();
+       
     }
 }
