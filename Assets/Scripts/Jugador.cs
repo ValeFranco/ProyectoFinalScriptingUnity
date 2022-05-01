@@ -67,7 +67,7 @@ public class Jugador : ScriptableObject
     public bool Atacar(Enemigo enemigo)
     {
         bool victoria = false;
-        if (enemigo.poder > poder)
+        if (enemigo.Poder > poder)
         {
             victoria = false;
 
@@ -75,20 +75,20 @@ public class Jugador : ScriptableObject
 
             return victoria;
         }
-        if (enemigo.poder == poder)
+        if (enemigo.Poder == poder)
         {
             victoria = false;
             Salud();
             return victoria;
         }
-        else if (enemigo.poder < poder)
+        else if (enemigo.Poder < poder)
         {
             victoria = true;
-            poder += enemigo.poder;
-            enemigo.torreEnemigo.ReducirAltura(enemigo);
+            poder += enemigo.Poder;
+            enemigo.TorreEnemigo.ReducirAltura(enemigo);
             torreJugador.AumentarAltura();
 
-            if (enemigo.torreEnemigo.altura == 0 || enemigo.torreEnemigo.listaAtacable.Count == 0)
+            if (enemigo.TorreEnemigo.altura == 0 || enemigo.TorreEnemigo.listaEnemigos.Count == 0)
             {
                 enemigo.torreEnemigo = null;
             }
@@ -106,55 +106,48 @@ public class Jugador : ScriptableObject
         return victoria;
     }
 
-    /*
-    public bool Atacar(Atacable target)
+
+    public bool AtacarEnemigo(Enemigo enemigo)
     {
         bool victoria = false;
-
-        if (target is Pickup)
+        if (enemigo.Poder > poder)
         {
-            poder += target.poder;
-            victoria = true;
+            victoria = false;
+
+            Salud();
+
             return victoria;
         }
-        else if (target is Enemigo)
+        if (enemigo.Poder == poder)
         {
-            Enemigo enemigo = target as Enemigo;
-
-            if (target.poder > poder)
-            {
-                victoria = false;
-
-                Salud();
-
-                return victoria;
-            }
-            if (target.poder == poder)
-            {
-                victoria = false;
-                Salud();
-                return victoria;
-            }
-            else if (target.poder < poder)
-            {
-                victoria = true;
-                poder += target.poder;
-                enemigo.torreEnemigo.ReducirAltura(target);
-                torreJugador.AumentarAltura();
-
-                if (enemigo.torreEnemigo.altura == 0 || enemigo.torreEnemigo.listaAtacable.Count == 0)
-                {
-                    enemigo.torreEnemigo = null;
-                }
-                return victoria;
-            }
-
-         
+            victoria = false;
+            Salud();
+            return victoria;
         }
-        return victoria;
+        else if (enemigo.Poder < poder)
+        {
+            victoria = true;
+            poder += enemigo.Poder;
+            enemigo.TorreEnemigo.ReducirAltura(enemigo);
+            torreJugador.AumentarAltura();
 
+            if (enemigo.TorreEnemigo.altura == 0 || enemigo.TorreEnemigo.listaEnemigos.Count == 0)
+            {
+                enemigo.torreEnemigo = null;
+            }
+            return victoria;
+        }
+
+        return victoria;
     }
-    */
+
+    public bool AtacarPickUP(Pickup target)
+    {
+        bool victoria;
+        poder += target.poder;
+        victoria = true;
+        return victoria;
+    }
 
 
     public void Salud()
@@ -162,7 +155,7 @@ public class Jugador : ScriptableObject
         vidas--;
         if ( vidas == 0)
         {
-            Iniciar();
+            //Iniciar();
            // gameOver.SetActive(true);
           
         }
