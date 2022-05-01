@@ -12,8 +12,6 @@ public class Jugador : ScriptableObject
     public byte vidas;
     public bool muerto;
     public GameObject gameOver;
-    [SerializeField] private float transitionTime = 1f;
-    private Animator transitionAnimator;
 
     private TorreJugador torreJugador;
 
@@ -21,7 +19,6 @@ public class Jugador : ScriptableObject
     // Start is called before the first frame update
     void Start()
     {
-        transitionAnimator = GetComponentInChildren<Animator>();
         gameOver.SetActive(false);
     }
 
@@ -125,18 +122,6 @@ public class Jugador : ScriptableObject
         }
     }
 
-    public void Iniciar()
-    {
-        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
-        StartCoroutine(SceneLoad(nextSceneIndex));
-        //SceneManager.LoadScene(numeroEscena);
-    }
-    public IEnumerator SceneLoad(int sceneIndex)
-    {
-        transitionAnimator.SetTrigger("StartTransition");
-        yield return new WaitForSeconds(transitionTime);
-        SceneManager.LoadScene(sceneIndex);
-    }
   
     //movimiento
     //morision
