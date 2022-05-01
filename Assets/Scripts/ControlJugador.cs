@@ -18,16 +18,23 @@ public class ControlJugador : MonoBehaviour
 
     private TorreJugador torreJugador;
 
+    public BarraVida barraCanvas;
+    
+
     private void ActualizarVida()
     {
        poderUI.GetComponentInChildren<TextMesh>().text = jugador.poder.ToString();
+        
     }
     // Start is called before the first frame update
     void Start()
     {
-
-       // gameOver.SetActive(false);
+        //falta restaurar el poder al comenzar
+        // gameOver.SetActive(false);
+        barraCanvas = GameObject.FindObjectOfType<BarraVida>();
+        
         posicionClick = this.transform.position;
+        
     }
 
     // Update is called once per frame
@@ -99,7 +106,10 @@ public class ControlJugador : MonoBehaviour
     }
     public void Salud()
     {
-        jugador.vidas--;
+        jugador.vidas--; 
+
+        barraCanvas.CambioBarraVida(jugador.vidas);
+
         if (jugador.Vidas == 0)
         {
             //Iniciar();

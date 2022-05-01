@@ -110,16 +110,16 @@ public class Jugador : ScriptableObject
     //}
 
 
-    public void Salud()
-    {
-        Vidas--;
-        if ( Vidas == 0)
-        {
-            //Iniciar();
-           // gameOver.SetActive(true);
+    //public void Salud()
+    //{
+    //    Vidas--;
+    //    if ( Vidas == 0)
+    //    {
+    //        //Iniciar();
+    //       // gameOver.SetActive(true);
           
-        }
-    }
+    //    }
+    //}
 
   
     //movimiento

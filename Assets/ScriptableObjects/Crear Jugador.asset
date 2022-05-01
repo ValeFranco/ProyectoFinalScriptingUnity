@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43a39b85f71b48045884c34b49cc8857, type: 3}
   m_Name: Crear Jugador
   m_EditorClassIdentifier: 
-  poder: 200
+  poder: 420
   nombre: Arturo
   vidas: 3
+  muerto: 0
+  gameOver: {fileID: 0}
