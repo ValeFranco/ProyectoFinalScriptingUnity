@@ -5,20 +5,19 @@ using UnityEngine;
 public class TorreEnemigo : Torre
 {
     Atacable atacable;
-    public List<Atacable> listaAtacable;
+    public List<Enemigo> listaEnemigos;
     bool destruible;
 
-    public TorreEnemigo(uint altura, Atacable atacable) : base(altura)
+    public TorreEnemigo(uint altura, Enemigo enemigo) : base(altura)
     {
         this.Altura = altura;
-        this.atacable = atacable;
-        listaAtacable = new List<Atacable>((int)altura);
-        listaAtacable.Add(atacable);
+        listaEnemigos = new List<Enemigo>((int)altura);
+        listaEnemigos.Add(enemigo);
         destruible = false;
     }
-    internal void ReducirAltura(Atacable target)
+    internal void ReducirAltura(Enemigo target)
     {
-        listaAtacable.Remove(target);
+        listaEnemigos.Remove(target);
         altura--;
     }
     // Start is called before the first frame update

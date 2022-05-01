@@ -8,6 +8,9 @@ public class ControlJugador : MonoBehaviour
     [SerializeField] private Jugador jugador;
     [SerializeField] private GameObject poderUI;
 
+    public Image barravida;
+    public float vida;
+    public float vidaMaxima;
     private float velocidad = 5f;
     private Vector2 posicionClick;
     private bool movimiento;
@@ -47,5 +50,6 @@ public class ControlJugador : MonoBehaviour
 
         ActualizarVida();
        
+        barravida.fillAmount = vida / vidaMaxima;
     }
 }

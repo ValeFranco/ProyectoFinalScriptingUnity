@@ -2,12 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemigo : Atacable
+[CreateAssetMenu(fileName = "Crear Enemigo", menuName = "Enemigo")]
+public class Enemigo : ScriptableObject
 {
     public TorreEnemigo torreEnemigo;
-    public Enemigo(uint poder, TorreEnemigo torreEnemigo) : base(poder)
+    public uint poder;
+
+    public TorreEnemigo TorreEnemigo { get => torreEnemigo;  private set => torreEnemigo = value; }
+    public uint Poder { get => poder; private set => poder = value; }
+
+    public Enemigo(uint poder, TorreEnemigo torreEnemigo) 
     {
-        this.torreEnemigo = torreEnemigo;
+        this.TorreEnemigo = torreEnemigo;
+        this.Poder = poder;
 
     }
 
