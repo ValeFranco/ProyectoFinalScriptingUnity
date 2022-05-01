@@ -60,22 +60,20 @@ public class Jugador : ScriptableObject
     }
    
     //programar funcion atacar 
-    public bool Atacar(Atacable target, TorreEnemigo torreEnemigo)
+    public bool Atacar(Atacable target)
     {
         bool victoria = false;
 
-        if (torreEnemigo.listaAtacable.IndexOf(target) == -1)
-        {
-            //throw new Exception("el enemigo no está en esta torre");
-        }
-        if (target.esObstaculo == true)
+        if (target is Pickup)
         {
             poder += target.poder;
             victoria = true;
             return victoria;
         }
-        if (target.esObstaculo == false)
+        else if (target is Enemigo)
         {
+            Enemigo enemigo = target as Enemigo;
+
             if (target.poder > poder)
             {
                 victoria = false;
@@ -92,12 +90,12 @@ public class Jugador : ScriptableObject
             {
                 victoria = true;
                 poder += target.poder;
-                torreEnemigo.ReducirAltura(target);
+                enemigo.torreEnemigo.ReducirAltura(target);
                 torreJugador.AumentarAltura();
 
-                if (torreEnemigo.altura == 0 || torreEnemigo.listaAtacable.Count == 0)
+                if (enemigo.torreEnemigo.altura == 0 || enemigo.torreEnemigo.listaAtacable.Count == 0)
                 {
-                    torreEnemigo = null;
+                    enemigo.torreEnemigo = null;
                 }
                 return victoria;
             }
