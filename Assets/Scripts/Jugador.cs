@@ -77,7 +77,7 @@ public class Jugador : ScriptableObject
             if (target.poder > poder)
             {
                 victoria = false;
-                vidas--;
+                
                 return victoria;
             }
             if (target.poder == poder)
@@ -102,6 +102,7 @@ public class Jugador : ScriptableObject
         }
         return victoria;
     }
+  
     //movimiento
     //morision
 }
