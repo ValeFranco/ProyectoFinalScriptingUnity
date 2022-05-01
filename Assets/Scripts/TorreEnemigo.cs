@@ -10,7 +10,27 @@ public class TorreEnemigo :ScriptableObject
 
     public uint altura;
 
-    public uint Altura { get => altura; private set => altura = value; }
+    //public uint Altura { get => altura; private set => altura = value; }
+
+    public uint Altura
+    {
+        get => altura;
+
+        private set
+        {
+            if (value != 0)
+            {
+                altura = value;
+            }
+            else
+            {
+                throw new UnityException("La altura de la torre no puede ser cero");
+            }
+        }
+    }
+
+
+
 
     public TorreEnemigo(uint altura, Enemigo enemigo)
     {
