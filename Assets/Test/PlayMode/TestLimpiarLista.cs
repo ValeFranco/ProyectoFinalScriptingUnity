@@ -10,23 +10,24 @@ public class TestLimpiarLista
     [UnityTest]
     public IEnumerator TestLimpiarListaWithEnumeratorPasses()
     {
-        //ControladorJuego controladorJuego = new ControladorJuego();
-        //List<Torre> torreEsperada = new List<Torre>(0);
+        ControladorJuego controladorJuego = new ControladorJuego();
+        List<Torre> torreEsperada = new List<Torre>(0);
         //Atacable atacable = new Atacable(2);
 
-        //Jugador jugador = new Jugador(5, "Juan");
+        Enemigo enemigo = new Enemigo(2);
+        Jugador jugador = new Jugador(5, "Juan");
+        ControlJugador controlJugador = new ControlJugador();
         //TorreJugador torreJugador = new TorreJugador(3, jugador);
 
         //TorreEnemigo torreEnemigo = new TorreEnemigo(1, atacable);
 
-        //jugador.Atacar(atacable);
+        controlJugador.AtacarEnemigo(enemigo);
+       
 
-        //controladorJuego.LimpiarLista();
+        controladorJuego.LimpiarLista();
 
         yield return new WaitForSeconds(10);
-        //Assert.AreEqual(torreEsperada, controladorJuego.listaTorres);
-        // Use the Assert class to test conditions.
-        // Use yield to skip a frame.
-        
+        Assert.AreEqual(torreEsperada, controladorJuego.listaTorresEnemigo);
+       
     }
 }

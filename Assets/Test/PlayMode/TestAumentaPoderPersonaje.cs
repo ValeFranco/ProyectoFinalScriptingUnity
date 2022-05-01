@@ -9,18 +9,19 @@ public class TestAumentaPoderPersonaje
     [UnityTest]
     public IEnumerator TestAumentaPoderPersonajeWithEnumeratorPasses()
     {
-        // Jugador jugador = new Jugador(15, "Pruebita");
-        // TorreJugador torreJugador = new TorreJugador(3, jugador);
+        Jugador jugador = new Jugador(15, "Pruebita");
+        //TorreJugador torreJugador = new TorreJugador(3, jugador);
+        ControlJugador controlJugador = new ControlJugador();
 
-        // Atacable victoria = new Atacable(3);
-        // TorreEnemigo torreEnemigo = new TorreEnemigo(4, victoria);
+        Enemigo enemigo = new Enemigo(3);
+      //  TorreEnemigo torreEnemigo = new TorreEnemigo(4, enemigo);
 
-        // jugador.Atacar(victoria);
+        controlJugador.AtacarEnemigo(enemigo);
 
         // //Use the Assert class to test conditions.
         // //Use yield to skip a frame.
         yield return new WaitForSeconds(10);
 
-        // Assert.AreEqual(18, torreJugador.Jugador.poder);
+        Assert.AreEqual(18, controlJugador.Jugador.Poder);
     }
 }

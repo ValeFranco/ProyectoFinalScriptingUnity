@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class ControlJugador : MonoBehaviour
 {
-    [SerializeField] private Jugador jugador;
+    [SerializeField] public Jugador jugador;
     [SerializeField] private GameObject poderUI;
 
     public Image barravida;
@@ -19,11 +19,12 @@ public class ControlJugador : MonoBehaviour
     private TorreJugador torreJugador;
 
     public BarraVida barraCanvas;
-    
+
+    public Jugador Jugador { get => jugador; set => jugador = value; }
 
     private void ActualizarVida()
     {
-       poderUI.GetComponentInChildren<TextMesh>().text = jugador.poder.ToString();
+       poderUI.GetComponentInChildren<TextMesh>().text = Jugador.poder.ToString();
         
     }
     // Start is called before the first frame update
@@ -33,8 +34,8 @@ public class ControlJugador : MonoBehaviour
         
         
         //condiciones iniciales Jugador:
-        jugador.vidas = 3;
-        jugador.poder = jugador.basepoder;
+        Jugador.vidas = 3;
+        Jugador.poder = Jugador.basepoder;
         
         barraCanvas = GameObject.FindObjectOfType<BarraVida>();
         posicionClick = this.transform.position;
@@ -66,7 +67,7 @@ public class ControlJugador : MonoBehaviour
     public bool AtacarEnemigo(Enemigo enemigo)
     {
         bool victoria = false;
-        if (enemigo.Poder > jugador.poder)
+        if (enemigo.Poder > Jugador.poder)
         {
             victoria = false;
 
@@ -74,16 +75,16 @@ public class ControlJugador : MonoBehaviour
 
             return victoria;
         }
-        if (enemigo.Poder == jugador.poder)
+        if (enemigo.Poder == Jugador.poder)
         {
             victoria = false;
             Salud();
             return victoria;
         }
-        else if (enemigo.Poder < jugador.poder)
+        else if (enemigo.Poder < Jugador.poder)
         {
             victoria = true;
-            jugador.poder += enemigo.Poder;
+            Jugador.poder += enemigo.Poder;
             //enemigo.TorreEnemigo.ReducirAltura(enemigo);
             //torreJugador.AumentarAltura();
             
@@ -100,18 +101,18 @@ public class ControlJugador : MonoBehaviour
     public bool AtacarPickUp(Pickup target)
     {
         bool victoria;
-        jugador.poder += target.Poder;
+        Jugador.poder += target.Poder;
         victoria = true;
 
         return victoria;
     }
     public void Salud()
     {
-        jugador.vidas--; 
+        Jugador.vidas--; 
 
-        barraCanvas.CambioBarraVida(jugador.vidas);
+        barraCanvas.CambioBarraVida(Jugador.vidas);
 
-        if (jugador.Vidas <= 0)
+        if (Jugador.Vidas <= 0)
         {
            isDead = true;
             gameOver.SetActive(true);
