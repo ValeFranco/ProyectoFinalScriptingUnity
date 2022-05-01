@@ -13,7 +13,6 @@ public class Jugador : ScriptableObject
     public bool muerto;
     public GameObject gameOver;
     [SerializeField] private float transitionTime = 1f;
-   
 
     private TorreJugador torreJugador;
 
@@ -22,7 +21,6 @@ public class Jugador : ScriptableObject
     void Start()
     {
         gameOver.SetActive(false);
-        
     }
 
     // Update is called once per frame
@@ -131,6 +129,8 @@ public class Jugador : ScriptableObject
     }
     public IEnumerator SceneLoad(int sceneIndex)
     {
+        transitionAnimator.SetTrigger("StartTransition");
+        yield return new WaitForSeconds(transitionTime);
         SceneManager.LoadScene(sceneIndex);
     }
     //movimiento
