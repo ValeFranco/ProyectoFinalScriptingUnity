@@ -2,19 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ControlEnemigo : MonoBehaviour
+public class ControllerPickUp : MonoBehaviour
 {
-    [SerializeField] private Enemigo enemigo;
+    [SerializeField] private Pickup pickup;
     [SerializeField] private GameObject poderUI;
 
-    private void ActualizarVida()
-    {
-        poderUI.GetComponentInChildren<TextMesh>().text = enemigo.poder.ToString();
-    }
     // Start is called before the first frame update
     void Start()
     {
-        
+        poderUI.GetComponentInChildren<TextMesh>().text = pickup.poder.ToString();
     }
 
     // Update is called once per frame
@@ -22,12 +18,13 @@ public class ControlEnemigo : MonoBehaviour
     {
         
     }
+
     public void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.CompareTag("Player"))
         {
-            collider.GetComponent<ControlJugador>().AtacarEnemigo(enemigo);
-            //Destroy(gameObject); --esto esta en atacar
+            collider.GetComponent<ControlJugador>().AtacarPickUp(pickup);
+            Destroy(gameObject);
 
         }
     }

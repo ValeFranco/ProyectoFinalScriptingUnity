@@ -9,7 +9,7 @@ public class Jugador : ScriptableObject
 {
     public uint poder;
     public string nombre;
-    public byte vidas;
+    public int vidas;
     public bool muerto;
     public GameObject gameOver;
 
@@ -19,7 +19,7 @@ public class Jugador : ScriptableObject
     // Start is called before the first frame update
     void Start()
     {
-        gameOver.SetActive(false);
+        //gameOver.SetActive(false);
     }
 
     // Update is called once per frame
@@ -32,7 +32,7 @@ public class Jugador : ScriptableObject
     {
         Poder = poder;
         Nombre = nombre;
-        vidas = 3;
+        Vidas = 3;
     }
     public uint Poder
     {
@@ -61,105 +61,65 @@ public class Jugador : ScriptableObject
             }
         }
     }
-   
+
+    public int Vidas { get => vidas; private set => vidas = value; }
+
     //programar funcion atacar
-    //
-    public bool Atacar(Enemigo enemigo)
-    {
-        bool victoria = false;
-        if (enemigo.Poder > poder)
-        {
-            victoria = false;
-
-            Salud();
-
-            return victoria;
-        }
-        if (enemigo.Poder == poder)
-        {
-            victoria = false;
-            Salud();
-            return victoria;
-        }
-        else if (enemigo.Poder < poder)
-        {
-            victoria = true;
-            poder += enemigo.Poder;
-            enemigo.TorreEnemigo.ReducirAltura(enemigo);
-            torreJugador.AumentarAltura();
-
-            if (enemigo.TorreEnemigo.altura == 0 || enemigo.TorreEnemigo.listaEnemigos.Count == 0)
-            {
-                enemigo.torreEnemigo = null;
-            }
-            return victoria;
-        }
-
-        return victoria;
-    }
-
-    public bool Atacar(Pickup target)
-    {
-        bool victoria;
-        poder += target.poder;
-        victoria = true;
-        return victoria;
-    }
 
 
-    public bool AtacarEnemigo(Enemigo enemigo)
-    {
-        bool victoria = false;
-        if (enemigo.Poder > poder)
-        {
-            victoria = false;
+    //public bool AtacarEnemigo(Enemigo enemigo)
+    //{
+    //    bool victoria = false;
+    //    if (enemigo.Poder > poder)
+    //    {
+    //        victoria = false;
 
-            Salud();
+    //        Salud();
 
-            return victoria;
-        }
-        if (enemigo.Poder == poder)
-        {
-            victoria = false;
-            Salud();
-            return victoria;
-        }
-        else if (enemigo.Poder < poder)
-        {
-            victoria = true;
-            poder += enemigo.Poder;
-            enemigo.TorreEnemigo.ReducirAltura(enemigo);
-            torreJugador.AumentarAltura();
+    //        return victoria;
+    //    }
+    //    if (enemigo.Poder == poder)
+    //    {
+    //        victoria = false;
+    //        Salud();
+    //        return victoria;
+    //    }
+    //    else if (enemigo.Poder < poder)
+    //    {
+    //        victoria = true;
+    //        poder += enemigo.Poder;
+    //        enemigo.TorreEnemigo.ReducirAltura(enemigo);
+    //        torreJugador.AumentarAltura();
 
-            if (enemigo.TorreEnemigo.altura == 0 || enemigo.TorreEnemigo.listaEnemigos.Count == 0)
-            {
-                enemigo.torreEnemigo = null;
-            }
-            return victoria;
-        }
+    //        if (enemigo.TorreEnemigo.altura == 0 || enemigo.TorreEnemigo.listaEnemigos.Count == 0)
+    //        {
+    //            enemigo.torreEnemigo = null;
+    //        }
+    //        return victoria;
+    //    }
 
-        return victoria;
-    }
+    //    return victoria;
+    //}
 
-    public bool AtacarPickUP(Pickup target)
-    {
-        bool victoria;
-        poder += target.poder;
-        victoria = true;
-        return victoria;
-    }
+    //public bool AtacarPickUP(Pickup target)
+    //{
+    //    bool victoria;
+    //    poder += target.Poder;
+    //    victoria = true;
+    //    return victoria;
+    //}
 
 
-    public void Salud()
-    {
-        vidas--;
-        if ( vidas == 0)
-        {
-            //Iniciar();
-           // gameOver.SetActive(true);
+    //public void Salud()
+    //{
+    //    Vidas--;
+    //    if ( Vidas == 0)
+    //    {
+    //        //Iniciar();
+    //       // gameOver.SetActive(true);
           
-        }
-    }
+    //    }
+    //}
 
   
     //movimiento

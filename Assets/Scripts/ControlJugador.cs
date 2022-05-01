@@ -9,22 +9,32 @@ public class ControlJugador : MonoBehaviour
     [SerializeField] private GameObject poderUI;
 
     public Image barravida;
-    public float vida;
-    public float vidaMaxima;
+    public float vidaMaxima=3;
     private float velocidad = 5f;
     private Vector2 posicionClick;
     private bool movimiento;
 
+    //public GameObject gameOver;
+
+    private TorreJugador torreJugador;
+
+    public BarraVida barraCanvas;
+    
+
     private void ActualizarVida()
     {
        poderUI.GetComponentInChildren<TextMesh>().text = jugador.poder.ToString();
+        
     }
     // Start is called before the first frame update
     void Start()
     {
+        //falta restaurar el poder al comenzar
+        // gameOver.SetActive(false);
+        barraCanvas = GameObject.FindObjectOfType<BarraVida>();
         
-
         posicionClick = this.transform.position;
+        
     }
 
     // Update is called once per frame
@@ -50,6 +60,62 @@ public class ControlJugador : MonoBehaviour
 
         ActualizarVida();
        
-        barravida.fillAmount = vida / vidaMaxima;
+        barravida.fillAmount = jugador.vidas / vidaMaxima;
+
     }
+    public bool AtacarEnemigo(Enemigo enemigo)
+    {
+        bool victoria = false;
+        if (enemigo.Poder > jugador.poder)
+        {
+            victoria = false;
+
+            Salud();
+
+            return victoria;
+        }
+        if (enemigo.Poder == jugador.poder)
+        {
+            victoria = false;
+            Salud();
+            return victoria;
+        }
+        else if (enemigo.Poder < jugador.poder)
+        {
+            victoria = true;
+            jugador.poder += enemigo.Poder;
+            enemigo.TorreEnemigo.ReducirAltura(enemigo);
+            torreJugador.AumentarAltura();
+            Destroy(enemigo); 
+
+            if (enemigo.TorreEnemigo.altura == 0 || enemigo.TorreEnemigo.listaEnemigos.Count == 0)
+            {
+                enemigo.torreEnemigo = null;
+            }
+            return victoria;
+        }
+
+        return victoria;
+    }
+    public bool AtacarPickUp(Pickup target)
+    {
+        bool victoria;
+        jugador.poder += target.Poder;
+        victoria = true;
+        return victoria;
+    }
+    public void Salud()
+    {
+        jugador.vidas--; 
+
+        barraCanvas.CambioBarraVida(jugador.vidas);
+
+        if (jugador.Vidas == 0)
+        {
+            //Iniciar();
+            // gameOver.SetActive(true);
+
+        }
+    }
+
 }
