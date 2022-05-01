@@ -9,7 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1350269f2739c496d9d4872666f7c770, type: 3}
-  m_Name: Crear PickUp
+  m_Script: {fileID: 11500000, guid: 3f99dce072d8f0c43acefb8c9cff1190, type: 3}
+  m_Name: Torre1
   m_EditorClassIdentifier: 
-  poder: 100
+  listaEnemigos:
+  - {fileID: 11400000, guid: 0f57669efff5e254cb06f92ecd5ac6b2, type: 2}
+  - {fileID: 11400000, guid: 87b618f3851dd6443a5bb6f9175ba6bd, type: 2}
+  altura: 2

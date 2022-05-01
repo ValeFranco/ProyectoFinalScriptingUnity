@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3f99dce072d8f0c43acefb8c9cff1190, type: 3}
-  m_Name: Crear TorreEnemigo
+  m_Script: {fileID: 11500000, guid: 2a117d8e62b9c4de0889ed21af62ea32, type: 3}
+  m_Name: Enemigo3
   m_EditorClassIdentifier: 
-  listaEnemigos:
-  - {fileID: 11400000, guid: 0f57669efff5e254cb06f92ecd5ac6b2, type: 2}
-  - {fileID: 11400000, guid: 87b618f3851dd6443a5bb6f9175ba6bd, type: 2}
-  altura: 2
+  torreEnemigo: {fileID: 11400000, guid: fff4c8ef04721d44db2747d92271806a, type: 2}
+  poder: 100

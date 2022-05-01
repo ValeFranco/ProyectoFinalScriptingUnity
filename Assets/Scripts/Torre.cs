@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 
 public class Torre : ScriptableObject
@@ -15,8 +16,8 @@ public class Torre : ScriptableObject
                 altura = value;
             }
             else
-            {
-               // throw new Exception("La altura de la torre no puede ser cero");
+            { 
+               throw new Exception("La altura de la torre no puede ser cero");
             }
         }
     }

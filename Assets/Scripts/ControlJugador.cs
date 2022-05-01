@@ -12,7 +12,7 @@ public class ControlJugador : MonoBehaviour
     private float velocidad = 5f;
     private Vector2 posicionClick;
     private bool movimiento;
-
+    
     public GameObject gameOver;
     public bool isDead;
 
@@ -30,7 +30,8 @@ public class ControlJugador : MonoBehaviour
     void Start()
     {
         gameOver.SetActive(false);
-       
+        
+        
         //condiciones iniciales Jugador:
         jugador.vidas = 3;
         jugador.poder = jugador.basepoder;
@@ -101,6 +102,7 @@ public class ControlJugador : MonoBehaviour
         bool victoria;
         jugador.poder += target.Poder;
         victoria = true;
+
         return victoria;
     }
     public void Salud()
