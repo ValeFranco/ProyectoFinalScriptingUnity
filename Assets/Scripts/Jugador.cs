@@ -20,6 +20,7 @@ public class Jugador : ScriptableObject
     void Start()
     {
         //gameOver.SetActive(false);
+        
     }
 
     // Update is called once per frame
