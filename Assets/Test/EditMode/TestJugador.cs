@@ -10,7 +10,7 @@ public class TestJugador
     public void TestJugadorPoderNoEsCero()
     {
         Jugador testJugador;
-        var exception = Assert.Throws<System.Exception>(() => testJugador = new Jugador(0, "carlos"));
+        var exception = Assert.Throws<UnityException>(() => testJugador = new Jugador(0, "carlos"));
         Assert.AreEqual("el poder inicial del usuario no puede ser cero", exception.Message);
 
     }

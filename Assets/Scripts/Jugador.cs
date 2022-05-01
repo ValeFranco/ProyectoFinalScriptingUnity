@@ -31,8 +31,13 @@ public class Jugador : ScriptableObject
             {
                 poder = value;
             }
-            
-               // throw new Exception("el poder inicial del usuario no puede ser cero");
+
+            else
+            {
+                throw new UnityException("el poder inicial del usuario no puede ser cero");
+            }
+
+
         }
     }
     public string Nombre
@@ -41,7 +46,7 @@ public class Jugador : ScriptableObject
         {
             if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
             {
-                //throw new Exception("el nombre no puede tener espacios en blanco  ");
+                throw new UnityException("el nombre no puede tener espacios en blanco  ");
             }
             else
             {
