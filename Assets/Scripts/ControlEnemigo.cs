@@ -11,16 +11,13 @@ public class ControlEnemigo : MonoBehaviour
     {
         poderUI.GetComponentInChildren<TextMesh>().text = enemigo.poder.ToString();
     }
-    // Start is called before the first frame update
     void Start()
     {
         
     }
-
-    // Update is called once per frame
     void Update()
     {
-        
+        ActualizarVida();
     }
     public void OnTriggerEnter2D(Collider2D collider)
     {
@@ -31,8 +28,6 @@ public class ControlEnemigo : MonoBehaviour
             {
                 Destroy(gameObject);
             }
-
-
         }
     }
 }

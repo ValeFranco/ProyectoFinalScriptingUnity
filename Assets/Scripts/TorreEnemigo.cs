@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Crear TorreEnemigo", menuName = "TorreEnemigo")]
 public class TorreEnemigo :ScriptableObject
 {
-    Atacable atacable;
+    //Atacable atacable;
     public List<Enemigo> listaEnemigos;
 
     public uint altura;
@@ -23,16 +23,5 @@ public class TorreEnemigo :ScriptableObject
     {
         listaEnemigos.Remove(target);
         Altura--;
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

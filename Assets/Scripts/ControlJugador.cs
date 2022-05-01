@@ -9,7 +9,6 @@ public class ControlJugador : MonoBehaviour
     [SerializeField] private GameObject poderUI;
 
     public Image barravida;
-    //public float vidaMaxima=3;
     private float velocidad = 5f;
     private Vector2 posicionClick;
     private bool movimiento;
@@ -29,23 +28,15 @@ public class ControlJugador : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //falta restaurar el poder al comenzar
         // gameOver.SetActive(false);
 
         //condiciones iniciales Jugador:
         jugador.vidas = 3;
         jugador.poder = jugador.basepoder;
-        //
-
-
+        
         barraCanvas = GameObject.FindObjectOfType<BarraVida>();
         posicionClick = this.transform.position;
-       
-        
-        
     }
-
-    // Update is called once per frame
     void Update()
     {
 
