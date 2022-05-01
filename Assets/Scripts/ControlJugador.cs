@@ -51,5 +51,16 @@ public class ControlJugador : MonoBehaviour
         ActualizarVida();
        
         barravida.fillAmount = vida / vidaMaxima;
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag("Enemigo"))
+        {
+            Debug.Log("se encontro con le enemigo");
+            
+        }
+
     }
 }

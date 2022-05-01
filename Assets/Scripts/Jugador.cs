@@ -101,7 +101,7 @@ public class Jugador : ScriptableObject
     public bool Atacar(Pickup target)
     {
         bool victoria;
-        poder += target.poder;
+        poder += target.Poder;
         victoria = true;
         return victoria;
     }
@@ -144,7 +144,7 @@ public class Jugador : ScriptableObject
     public bool AtacarPickUP(Pickup target)
     {
         bool victoria;
-        poder += target.poder;
+        poder += target.Poder;
         victoria = true;
         return victoria;
     }
