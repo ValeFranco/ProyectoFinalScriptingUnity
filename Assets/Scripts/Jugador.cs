@@ -13,6 +13,7 @@ public class Jugador : ScriptableObject
     public bool muerto;
     public GameObject gameOver;
     [SerializeField] private float transitionTime = 1f;
+    private Animator transitionAnimator;
 
     private TorreJugador torreJugador;
 
@@ -20,6 +21,7 @@ public class Jugador : ScriptableObject
     // Start is called before the first frame update
     void Start()
     {
+        transitionAnimator = GetComponentInChildren<Animator>();
         gameOver.SetActive(false);
     }
 
