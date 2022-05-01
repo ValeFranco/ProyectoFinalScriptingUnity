@@ -14,12 +14,15 @@ public class TestPierdeVida
         Jugador jugador2 = new Jugador(15, "Pruebita");
         TorreJugador torreJugador = new TorreJugador(3, jugador2);
 
-        //Atacable derrota = new Atacable(falso, 33);
-        //TorreEnemigo torreEnemigo = new TorreEnemigo(4, derrota);
+        ControlJugador jugador = new ControlJugador();
 
-        //torreJugador.Atacar(derrota, torreEnemigo);
+        Enemigo enemigo = new Enemigo(33);
+       
+        TorreEnemigo torreEnemigo = new TorreEnemigo(4, enemigo);
+
+        jugador.AtacarEnemigo(enemigo);
 
         yield return new WaitForSeconds(12);
-        Assert.AreEqual(2, torreJugador.Jugador.Vidas);
+        Assert.AreEqual(2, jugador.Jugador.Vidas);
     }
 }
