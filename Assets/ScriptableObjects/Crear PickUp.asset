@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1350269f2739c496d9d4872666f7c770, type: 3}
   m_Name: Crear PickUp
   m_EditorClassIdentifier: 
-  poder: 20
+  poder: 100

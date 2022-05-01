@@ -5,9 +5,6 @@ using UnityEngine;
 public class Atacable : MonoBehaviour
 {
     internal uint poder;
-    
-    
-
     public Atacable(uint poder)
     {
         
@@ -29,15 +26,4 @@ public class Atacable : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
