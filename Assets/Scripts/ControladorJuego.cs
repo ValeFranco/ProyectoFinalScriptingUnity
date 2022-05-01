@@ -6,6 +6,7 @@ public class ControladorJuego : MonoBehaviour
 {
     public List<TorreEnemigo> listaTorresEnemigo = new List<TorreEnemigo>();
     public TorreJugador torreJugador;
+  
 
     public ControladorJuego()
     {
@@ -32,5 +33,7 @@ public class ControladorJuego : MonoBehaviour
             mensaje = "Pasaste de nivel";
         }
         return mensaje;
+
+      
     }
 }
