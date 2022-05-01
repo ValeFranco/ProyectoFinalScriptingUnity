@@ -34,9 +34,9 @@ public class TorreJugador : Torre
         {
             Atacable test = objeto as Atacable;
 
-            if (!test.esObstaculo)
+            if (test is Pickup)
             {
-                listaJugador.Add(objeto);
+                listaJugador.Add(test);
             }
             else
             {

@@ -5,11 +5,12 @@ using UnityEngine;
 public class Atacable : MonoBehaviour
 {
     internal uint poder;
-    internal bool esObstaculo;
+    
+    
 
-    public Atacable(bool esObstaculo, uint poder)
+    public Atacable(uint poder)
     {
-        this.esObstaculo = esObstaculo;
+        
         Poder = poder;
     }
 

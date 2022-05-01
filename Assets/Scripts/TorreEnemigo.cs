@@ -7,6 +7,7 @@ public class TorreEnemigo : Torre
     Atacable atacable;
     public List<Atacable> listaAtacable;
     bool destruible;
+
     public TorreEnemigo(uint altura, Atacable atacable) : base(altura)
     {
         this.Altura = altura;
