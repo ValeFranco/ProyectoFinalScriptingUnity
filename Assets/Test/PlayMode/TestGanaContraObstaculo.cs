@@ -9,13 +9,13 @@ public class TestGanaContraObstaculo
     [UnityTest]
     public IEnumerator TestGanaContraObstaculoWithEnumeratorPasses()
     {
-        Jugador jugador4 = new Jugador(15, "Pruebita");
-        TorreJugador torreJugador = new TorreJugador(3, jugador4);
+        Jugador jugador = new Jugador(15, "Pruebita");
+        TorreJugador torreJugador = new TorreJugador(3, jugador);
 
-        Atacable obstaculo = new Atacable(true, 3);
+        Atacable obstaculo = new Atacable(3);
         TorreEnemigo torreEnemigo = new TorreEnemigo(4, obstaculo);
 
-        jugador4.Atacar(obstaculo, torreEnemigo);
+        jugador.Atacar(obstaculo);
 
         //Use the Assert class to test conditions.
         //Use yield to skip a frame.

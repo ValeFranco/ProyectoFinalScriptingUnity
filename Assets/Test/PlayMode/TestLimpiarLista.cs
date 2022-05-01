@@ -12,14 +12,14 @@ public class TestLimpiarLista
     {
         ControladorJuego controladorJuego = new ControladorJuego();
         List<Torre> torreEsperada = new List<Torre>(0);
-        //Atacable atacable = new Atacable(false, 2);
+        Atacable atacable = new Atacable(2);
 
         Jugador jugador = new Jugador(5, "Juan");
         TorreJugador torreJugador = new TorreJugador(3, jugador);
 
-        //TorreEnemigo torreEnemigo = new TorreEnemigo(1, atacable);
+        TorreEnemigo torreEnemigo = new TorreEnemigo(1, atacable);
 
-        //jugador.Atacar(atacable, torreEnemigo);
+        jugador.Atacar(atacable);
 
         controladorJuego.LimpiarLista();
 
