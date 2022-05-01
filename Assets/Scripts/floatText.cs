@@ -10,7 +10,7 @@ public class floatText : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        this.GetComponent<TextMesh> = Jugador.poder.ToString();
     }
 
     // Update is called once per frame

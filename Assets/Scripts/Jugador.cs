@@ -65,7 +65,51 @@ public class Jugador : ScriptableObject
         }
     }
    
-    //programar funcion atacar 
+    //programar funcion atacar
+    //
+    public bool Atacar(Enemigo enemigo)
+    {
+        bool victoria = false;
+        if (enemigo.poder > poder)
+        {
+            victoria = false;
+
+            Salud();
+
+            return victoria;
+        }
+        if (enemigo.poder == poder)
+        {
+            victoria = false;
+            Salud();
+            return victoria;
+        }
+        else if (enemigo.poder < poder)
+        {
+            victoria = true;
+            poder += enemigo.poder;
+            enemigo.torreEnemigo.ReducirAltura(enemigo);
+            torreJugador.AumentarAltura();
+
+            if (enemigo.torreEnemigo.altura == 0 || enemigo.torreEnemigo.listaAtacable.Count == 0)
+            {
+                enemigo.torreEnemigo = null;
+            }
+            return victoria;
+        }
+
+        return victoria;
+    }
+
+    public bool Atacar(Pickup target)
+    {
+        bool victoria;
+        poder += target.poder;
+        victoria = true;
+        return victoria;
+    }
+
+    /*
     public bool Atacar(Atacable target)
     {
         bool victoria = false;
@@ -113,6 +157,8 @@ public class Jugador : ScriptableObject
         return victoria;
 
     }
+    */
+
 
     public void Salud()
     {
