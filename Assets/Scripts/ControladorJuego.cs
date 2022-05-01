@@ -6,11 +6,16 @@ public class ControladorJuego : MonoBehaviour
 {
     public List<TorreEnemigo> listaTorresEnemigo = new List<TorreEnemigo>();
     public TorreJugador torreJugador;
+    public GameObject ganaste;
   
+void Start()
+{
+  ganaste.SetActive(false);
+}
 
     public ControladorJuego()
     {
-
+        
     }
 
     public string LimpiarLista()
@@ -27,10 +32,12 @@ public class ControladorJuego : MonoBehaviour
         if (listaTorresEnemigo.Count == 0)
         {
             pasoNivel = true;
+            ganaste.SetActive(true);
         }
         if (pasoNivel)
         {
             mensaje = "Pasaste de nivel";
+            
         }
         return mensaje;
 
