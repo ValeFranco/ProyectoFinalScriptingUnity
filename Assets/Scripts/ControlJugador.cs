@@ -13,7 +13,8 @@ public class ControlJugador : MonoBehaviour
     private Vector2 posicionClick;
     private bool movimiento;
 
-    //public GameObject gameOver;
+    public GameObject gameOver;
+    public bool isDead;
 
     private TorreJugador torreJugador;
 
@@ -28,8 +29,8 @@ public class ControlJugador : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // gameOver.SetActive(false);
-
+        gameOver.SetActive(false);
+       
         //condiciones iniciales Jugador:
         jugador.vidas = 3;
         jugador.poder = jugador.basepoder;
@@ -58,8 +59,7 @@ public class ControlJugador : MonoBehaviour
         }
 
         ActualizarVida();
-       
-        //barravida.fillAmount = jugador.vidas / vidaMaxima;
+      
 
     }
     public bool AtacarEnemigo(Enemigo enemigo)
@@ -109,12 +109,10 @@ public class ControlJugador : MonoBehaviour
 
         barraCanvas.CambioBarraVida(jugador.vidas);
 
-        if (jugador.Vidas == 0)
+        if (jugador.Vidas <= 0)
         {
-            //Iniciar();
-            // gameOver.SetActive(true);
-
+           isDead = true;
+            gameOver.SetActive(true);
         }
     }
-
 }
