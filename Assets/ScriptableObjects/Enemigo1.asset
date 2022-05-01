@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2a117d8e62b9c4de0889ed21af62ea32, type: 3}
-  m_Name: Crear Enemigo
+  m_Name: Enemigo1
   m_EditorClassIdentifier: 
-  torreEnemigo: {fileID: 0}
-  poder: 100
+  torreEnemigo: {fileID: 11400000, guid: fff4c8ef04721d44db2747d92271806a, type: 2}
+  poder: 50

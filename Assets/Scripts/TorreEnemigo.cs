@@ -2,23 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TorreEnemigo : Torre
+[CreateAssetMenu(fileName = "Crear TorreEnemigo", menuName = "TorreEnemigo")]
+public class TorreEnemigo :ScriptableObject
 {
     Atacable atacable;
     public List<Enemigo> listaEnemigos;
-    bool destruible;
 
-    public TorreEnemigo(uint altura, Enemigo enemigo) : base(altura)
+    public uint altura;
+
+    public uint Altura { get => altura; private set => altura = value; }
+
+    public TorreEnemigo(uint altura, Enemigo enemigo)
     {
-        this.Altura = altura;
+        this.Altura= altura;
         listaEnemigos = new List<Enemigo>((int)altura);
         listaEnemigos.Add(enemigo);
-        destruible = false;
+        
     }
     internal void ReducirAltura(Enemigo target)
     {
         listaEnemigos.Remove(target);
-        altura--;
+        Altura--;
     }
     // Start is called before the first frame update
     void Start()

@@ -26,8 +26,12 @@ public class ControlEnemigo : MonoBehaviour
     {
         if (collider.CompareTag("Player"))
         {
-            collider.GetComponent<ControlJugador>().AtacarEnemigo(enemigo);
-            //Destroy(gameObject); --esto esta en atacar
+            //collider.GetComponent<ControlJugador>().AtacarEnemigo(enemigo);
+            if (collider.GetComponent<ControlJugador>().AtacarEnemigo(enemigo))
+            {
+                Destroy(gameObject);
+            }
+
 
         }
     }

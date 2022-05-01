@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43a39b85f71b48045884c34b49cc8857, type: 3}
-  m_Name: Crear Jugador
+  m_Script: {fileID: 11500000, guid: 2a117d8e62b9c4de0889ed21af62ea32, type: 3}
+  m_Name: Enemigo2
   m_EditorClassIdentifier: 
-  poder: 150
-  nombre: Arturo
-  vidas: 0
-  muerto: 0
-  gameOver: {fileID: 0}
+  torreEnemigo: {fileID: 11400000, guid: fff4c8ef04721d44db2747d92271806a, type: 2}
+  poder: 200

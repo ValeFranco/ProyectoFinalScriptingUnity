@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ControladorJuego : MonoBehaviour
 {
-    public List<Torre> listaTorres = new List<Torre>();
+    public List<TorreEnemigo> listaTorresEnemigo = new List<TorreEnemigo>();
     public TorreJugador torreJugador;
 
     public ControladorJuego()
@@ -16,14 +16,14 @@ public class ControladorJuego : MonoBehaviour
     {
         bool pasoNivel = true;
         string mensaje = "No se ha ganado el nivel";
-        foreach (TorreEnemigo item in listaTorres)
+        foreach (TorreEnemigo item in listaTorresEnemigo)
         {
             if (item == null)
             {
-                listaTorres.Remove(item);
+                listaTorresEnemigo.Remove(item);
             }
         }
-        if (listaTorres.Count == 0)
+        if (listaTorresEnemigo.Count == 0)
         {
             pasoNivel = true;
         }

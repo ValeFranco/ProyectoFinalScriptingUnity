@@ -9,7 +9,7 @@ public class ControlJugador : MonoBehaviour
     [SerializeField] private GameObject poderUI;
 
     public Image barravida;
-    public float vidaMaxima=3;
+    //public float vidaMaxima=3;
     private float velocidad = 5f;
     private Vector2 posicionClick;
     private bool movimiento;
@@ -34,6 +34,8 @@ public class ControlJugador : MonoBehaviour
         barraCanvas = GameObject.FindObjectOfType<BarraVida>();
         
         posicionClick = this.transform.position;
+        jugador.vidas = 3;
+        
         
     }
 
@@ -60,7 +62,7 @@ public class ControlJugador : MonoBehaviour
 
         ActualizarVida();
        
-        barravida.fillAmount = jugador.vidas / vidaMaxima;
+        //barravida.fillAmount = jugador.vidas / vidaMaxima;
 
     }
     public bool AtacarEnemigo(Enemigo enemigo)
@@ -85,8 +87,8 @@ public class ControlJugador : MonoBehaviour
             victoria = true;
             jugador.poder += enemigo.Poder;
             enemigo.TorreEnemigo.ReducirAltura(enemigo);
-            torreJugador.AumentarAltura();
-            Destroy(enemigo); 
+            //torreJugador.AumentarAltura();
+            
 
             if (enemigo.TorreEnemigo.altura == 0 || enemigo.TorreEnemigo.listaEnemigos.Count == 0)
             {
