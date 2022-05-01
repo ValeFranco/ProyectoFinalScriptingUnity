@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 43a39b85f71b48045884c34b49cc8857, type: 3}
-  m_Name: Crear Jugador
+  m_Name: Jugador
   m_EditorClassIdentifier: 
   basepoder: 100
   nombre: Arturo

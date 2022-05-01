@@ -19,7 +19,7 @@ public class TestGanaContraObstaculo
 
         //Use the Assert class to test conditions.
         //Use yield to skip a frame.
-       yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(10);
 
         //Assert.AreEqual(18, torreJugador.Jugador.poder);
     }
