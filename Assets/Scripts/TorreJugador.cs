@@ -2,18 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TorreJugador : Torre
-{
+public class TorreJugador
+{ uint altura;
     Jugador jugador;
     public List<object> listaJugador;
-    public TorreJugador(uint altura, Jugador jugador) : base(altura)
+    public TorreJugador(uint altura, Jugador jugador)
     {
         this.Altura = altura;
         this.jugador = jugador;
         listaJugador = new List<object>((int)altura);
         listaJugador.Add(jugador);
     }
+
+
     public Jugador Jugador { get => jugador; set => jugador = value; }
+
+    internal uint Altura
+    {
+        get => altura; set
+        {
+            if (value != 0)
+            {
+                altura = value;
+            }
+            else
+            {
+              throw new UnityException("La altura de la torre no puede ser cero");
+            }
+        }
+    }
+    
     internal void AumentarAltura()
     {
         List<object> listaNueva = new List<object>(((int)Altura) + 1);
@@ -22,6 +40,8 @@ public class TorreJugador : Torre
         listaJugador = listaNueva;
         Altura++;
     }
+
+
 
     public void AnadirATorre(object objeto)
     {
@@ -39,7 +59,7 @@ public class TorreJugador : Torre
             }
             else
             {
-                //throw new Exception("no se pueden a?adir enemigos a la torre");
+               
             }
 
         }

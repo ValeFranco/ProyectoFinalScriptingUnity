@@ -12,7 +12,7 @@ public class TestTorreTieneNiveles
     {
         Jugador Test1Jugador = new Jugador(3, "nombre");
         TorreJugador testTorreJugador;
-        var exception = Assert.Throws<System.Exception>(() => testTorreJugador = new TorreJugador(0, Test1Jugador));
+        var exception = Assert.Throws<UnityException>(() => testTorreJugador = new TorreJugador(0, Test1Jugador));
         Assert.AreEqual("La altura de la torre no puede ser cero", exception.Message);
     }
     
