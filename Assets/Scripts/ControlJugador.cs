@@ -6,15 +6,16 @@ using UnityEngine.UI;
 public class ControlJugador : MonoBehaviour
 {
     [SerializeField] private Jugador jugador;
-    [SerializeField] private Text poderUI;
+    //[SerializeField] private Text poderUI;
 
     private float velocidad = 5f;
-    private Vector3 posicionDestino;
+    private Vector2 posicionClick;
+    private bool movimiento;
     // Start is called before the first frame update
     void Start()
     {
-        poderUI.text = jugador.poder.ToString();
-        posicionDestino = this.transform.position;
+        //poderUI.text = jugador.poder.ToString();
+        posicionClick = this.transform.position;
     }
 
     // Update is called once per frame
@@ -22,9 +23,20 @@ public class ControlJugador : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            posicionDestino = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            posicionDestino.z = this.transform.position.z;
+            posicionClick = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            movimiento = true;
         }
-        this.transform.position = Vector3.MoveTowards(this.transform.position, posicionDestino, velocidad*Time.deltaTime);
+
+        if (movimiento && (Vector2)transform.position != posicionClick)
+        {
+            float step = velocidad * Time.deltaTime;
+            transform.position = Vector2.MoveTowards(transform.position, posicionClick, step);
+
+        }
+        else
+        {
+            movimiento = false;
+        }
+
     }
 }
