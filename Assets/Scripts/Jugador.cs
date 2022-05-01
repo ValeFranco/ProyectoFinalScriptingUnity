@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 [CreateAssetMenu(fileName = "Crear Jugador", menuName = "Jugador")]
@@ -9,6 +10,10 @@ public class Jugador : ScriptableObject
     public uint poder;
     public string nombre;
     public byte vidas;
+    public bool muerto;
+    public GameObject gameOver;
+    [SerializeField] private float transitionTime = 1f;
+   
 
     private TorreJugador torreJugador;
 
@@ -16,13 +21,14 @@ public class Jugador : ScriptableObject
     // Start is called before the first frame update
     void Start()
     {
+        gameOver.SetActive(false);
         
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     public Jugador(uint poder, string nombre)
@@ -77,13 +83,13 @@ public class Jugador : ScriptableObject
             if (target.poder > poder)
             {
                 victoria = false;
-                vidas--;
+                Salud();
                 return victoria;
             }
             if (target.poder == poder)
             {
                 victoria = false;
-                vidas--;
+                Salud();
                 return victoria;
             }
             else if (target.poder < poder)
@@ -99,8 +105,33 @@ public class Jugador : ScriptableObject
                 }
                 return victoria;
             }
+
+         
         }
         return victoria;
+
+    }
+
+    public void Salud()
+    {
+        vidas--;
+        if ( vidas == 0)
+        {
+            Iniciar();
+           // gameOver.SetActive(true);
+          
+        }
+    }
+
+    public void Iniciar()
+    {
+        int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        StartCoroutine(SceneLoad(nextSceneIndex));
+        //SceneManager.LoadScene(numeroEscena);
+    }
+    public IEnumerator SceneLoad(int sceneIndex)
+    {
+        SceneManager.LoadScene(sceneIndex);
     }
     //movimiento
     //morision
