@@ -19,3 +19,5 @@ es que el tipo de Pick Up que se genere sea aleatorio entre un buff y un debuff.
 
 3. Para esta entrega se priorizó la funcionalidad principal del juego (metodo ataque) y los diferentes resultados que pueda tener
 un combate realizado entre jugador y enemigo.
+
+4. Para poder interactuar con el personaje el sistema de movimiento empleado en este caso ha sido Point & Click; para con el click izquierdo el personaje pueda dirigirse al punto indicado por el usuario.
