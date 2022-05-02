@@ -21,3 +21,6 @@ es que el tipo de Pick Up que se genere sea aleatorio entre un buff y un debuff.
 un combate realizado entre jugador y enemigo.
 
 4. Para poder interactuar con el personaje el sistema de movimiento empleado en este caso ha sido Point & Click; para con el click izquierdo el personaje pueda dirigirse al punto indicado por el usuario.
+
+# Link ejecutable: 
+https://drive.google.com/file/d/1YU54gwjWduR9RZzE-azPsw3TsCW9P5TW/view?usp=sharing
