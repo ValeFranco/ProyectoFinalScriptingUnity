@@ -23,7 +23,7 @@ public class ControllerPickUp : PickUps
     {
         if (collider.CompareTag("Player"))
         {
-            collider.GetComponent<ControlJugador>().AtacarPickUp(pickup);
+            collider.GetComponent<ControlJugador>().AtacarPickUpBuff(pickup);
             Destroy(gameObject);
 
         }

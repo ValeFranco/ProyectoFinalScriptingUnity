@@ -23,7 +23,7 @@ public class DeBuffController : PickUps
     {
         if (collider.CompareTag("Player"))
         {
-            collider.GetComponent<ControlJugador>().AtacarPickUp(pickup);
+            collider.GetComponent<ControlJugador>().AtacarPickUpDebuff(pickup);
             Destroy(gameObject);
 
         }

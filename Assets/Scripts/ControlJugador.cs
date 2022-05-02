@@ -98,10 +98,18 @@ public class ControlJugador : MonoBehaviour
 
         return victoria;
     }
-    public bool AtacarPickUp(Pickup target)
+    public bool AtacarPickUpBuff(Pickup target)
     {
         bool victoria;
         Jugador.poder += target.Poder;
+        victoria = true;
+
+        return victoria;
+    }
+    public bool AtacarPickUpDebuff(Pickup target)
+    {
+        bool victoria;
+        Jugador.poder -= target.Poder;
         victoria = true;
 
         return victoria;
