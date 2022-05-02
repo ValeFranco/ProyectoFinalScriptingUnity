@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ControllerPickUp : PickUps
+public class DeBuffController : PickUps
 {
     [SerializeField] private Pickup pickup;
     [SerializeField] private GameObject poderUI;
@@ -16,7 +16,7 @@ public class ControllerPickUp : PickUps
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void OnTriggerEnter2D(Collider2D collider)
