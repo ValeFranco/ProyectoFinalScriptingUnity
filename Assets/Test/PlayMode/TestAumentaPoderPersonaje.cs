@@ -9,18 +9,7 @@ public class TestAumentaPoderPersonaje
     [UnityTest]
     public IEnumerator TestAumentaPoderPersonajeWithEnumeratorPasses()
     {
-
-        
-
-
-
         Jugador jugador = ScriptableObject.CreateInstance<Jugador>();
-
-       
-
-       
-
-
         //Jugador jugador = new Jugador(15, "Pruebita");
         //TorreJugador torreJugador = new TorreJugador(3, jugador);
         ControlJugador controlJugador = new ControlJugador();
