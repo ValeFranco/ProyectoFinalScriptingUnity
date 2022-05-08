@@ -89,13 +89,10 @@ public class ControlJugador : MonoBehaviour
             //torreJugador.AumentarAltura();
 
 
-            if ( torreEnemigo.listaPisos.Count == 0)
+            if (GameManager.Instance.torreEnemigo.listaPisos.Count == 0) //esta es la condición donde evaluamos que la lista este vacia
             {
-                foreach(var item in torreEnemigo.listaPisos)
-                {
-                    torreEnemigo.RemoverPiso(item.altura);
-                }
                 
+                GameManager.Instance.torreEnemigo.RemoverPiso(altura);              
             }
             return victoria;
         }
