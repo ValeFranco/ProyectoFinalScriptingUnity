@@ -13,6 +13,7 @@ public class TorreEnemigo : MonoBehaviour
     {
         Destroy(ListaPisos[altura]);
         ListaPisos.RemoveAt(altura);
+
     }
 
     //public uint altura;
