@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class Jugador : ScriptableObject
 {
     public uint basepoder;
-    internal uint poder;
+    public uint poder;
     public string nombre;
     public int vidas;
     public bool muerto;

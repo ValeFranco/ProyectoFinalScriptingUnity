@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ControlEnemigo : MonoBehaviour
 {
-    [SerializeField] private Enemigo enemigo;
+    [SerializeField] public Enemigo enemigo;
     [SerializeField] private GameObject poderUI;
 
     private void ActualizarVida()

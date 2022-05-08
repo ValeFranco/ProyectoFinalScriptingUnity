@@ -10,19 +10,21 @@ public class TestPierdeVida
     [UnityTest]
     public IEnumerator TestPierdeVidaWithEnumeratorPasses()
     {
-        
-        Jugador jugador2 = new Jugador(15, "Pruebita");
-        TorreJugador torreJugador = new TorreJugador(3, jugador2);
+        Jugador jugador = ScriptableObject.CreateInstance<Jugador>();
+        ControlJugador controlJugador = new ControlJugador();
+        controlJugador.jugador = jugador;
+        controlJugador.jugador.Poder = 10;
 
-        ControlJugador jugador = new ControlJugador();
+        Enemigo enemigo = ScriptableObject.CreateInstance<Enemigo>();
+        ControlEnemigo controlEnemigo = new ControlEnemigo();
+        controlEnemigo.enemigo = enemigo;
+        controlEnemigo.enemigo.poder = 13;
 
-        Enemigo enemigo = new Enemigo(33);
-       
-        //TorreEnemigo torreEnemigo = new TorreEnemigo(4, enemigo);
+        controlJugador.AtacarEnemigo(enemigo);
 
-        jugador.AtacarEnemigo(enemigo);
+        yield return new WaitForSeconds(10);
+        Assert.AreEqual(2, controlJugador.jugador.vidas);
 
-        yield return new WaitForSeconds(12);
-        Assert.AreEqual(2, jugador.Jugador.Vidas);
+
     }
 }
