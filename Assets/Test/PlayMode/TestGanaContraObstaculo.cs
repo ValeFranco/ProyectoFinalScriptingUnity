@@ -16,7 +16,7 @@ public class TestGanaContraObstaculo
 
         Enemigo enemigo = new Enemigo(3);
         
-        TorreEnemigo torreEnemigo = new TorreEnemigo(4, enemigo);
+        //TorreEnemigo torreEnemigo = new TorreEnemigo(4, enemigo);
 
         controlJugador.AtacarEnemigo(enemigo);
 

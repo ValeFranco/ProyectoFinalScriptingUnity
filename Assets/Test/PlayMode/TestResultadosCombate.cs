@@ -18,9 +18,9 @@ public class TestResultadosCombate
         Enemigo victoria = new Enemigo(3);
         Enemigo derrota = new Enemigo(33);
 
-        TorreEnemigo torreEnemigo = new TorreEnemigo(4, empate);
-        torreEnemigo.listaEnemigos.Add(victoria);
-        torreEnemigo.listaEnemigos.Add(derrota);
+        //TorreEnemigo torreEnemigo = new TorreEnemigo(4, empate);
+        //torreEnemigo.listaEnemigos.Add(victoria);
+        //torreEnemigo.listaEnemigos.Add(derrota);
 
         yield return new WaitForSeconds(10);
 

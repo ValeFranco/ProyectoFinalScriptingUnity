@@ -18,7 +18,7 @@ public class TestPierdeVida
 
         Enemigo enemigo = new Enemigo(33);
        
-        TorreEnemigo torreEnemigo = new TorreEnemigo(4, enemigo);
+        //TorreEnemigo torreEnemigo = new TorreEnemigo(4, enemigo);
 
         jugador.AtacarEnemigo(enemigo);
 

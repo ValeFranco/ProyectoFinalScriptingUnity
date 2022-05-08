@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 22270836}
   - component: {fileID: 22270839}
   m_Layer: 0
-  m_Name: Enemigo
+  m_Name: Enemigo3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -936,6 +936,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 733283442}
+  - component: {fileID: 733283443}
   m_Layer: 0
   m_Name: TorreEnemigo
   m_TagString: Untagged
@@ -960,6 +961,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &733283443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733283441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44b65b2bcbb5d0a43a78cff69b1ad69e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  listaPisos:
+  - {fileID: 2085522503}
+  - {fileID: 907448786}
+  - {fileID: 1246944835}
 --- !u!1 &829821343 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7594297967384651036, guid: 63da6bca76a7b4538b5d5e6f4f85e0e8, type: 3}
@@ -975,6 +992,7 @@ GameObject:
   m_Component:
   - component: {fileID: 907448785}
   - component: {fileID: 907448784}
+  - component: {fileID: 907448786}
   m_Layer: 0
   m_Name: Nivel 2
   m_TagString: Untagged
@@ -1047,6 +1065,20 @@ Transform:
   m_Father: {fileID: 733283442}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &907448786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907448783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fa9362dedf62c74cb98fd9c3e0749c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemigo: {fileID: 1230723715}
+  altura: 2
 --- !u!4 &920578409 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 244460867022264022, guid: 6e8325a57661ea6458d6236be377ce6c, type: 3}
@@ -1347,8 +1379,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1246944834}
   - component: {fileID: 1246944833}
+  - component: {fileID: 1246944835}
   m_Layer: 0
-  m_Name: Nivel 1
+  m_Name: Nivel 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1419,6 +1452,20 @@ Transform:
   m_Father: {fileID: 733283442}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1246944835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1246944832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fa9362dedf62c74cb98fd9c3e0749c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemigo: {fileID: 22270836}
+  altura: 3
 --- !u!1 &1267917663 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 244460867439928136, guid: 6e8325a57661ea6458d6236be377ce6c, type: 3}
@@ -1748,7 +1795,7 @@ GameObject:
   - component: {fileID: 2049425347}
   - component: {fileID: 2049425346}
   m_Layer: 0
-  m_Name: Enemigo3
+  m_Name: Enemigo1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1951,8 +1998,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2085522502}
   - component: {fileID: 2085522501}
+  - component: {fileID: 2085522503}
   m_Layer: 0
-  m_Name: Nivel 3
+  m_Name: Nivel 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2023,6 +2071,20 @@ Transform:
   m_Father: {fileID: 733283442}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2085522503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085522500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fa9362dedf62c74cb98fd9c3e0749c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemigo: {fileID: 2049425347}
+  altura: 1
 --- !u!1 &2113832644
 GameObject:
   m_ObjectHideFlags: 0

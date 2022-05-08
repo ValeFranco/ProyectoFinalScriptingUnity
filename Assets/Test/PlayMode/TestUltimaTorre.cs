@@ -20,7 +20,7 @@ public class TestUltimaTorre
         Jugador jugador = new Jugador(5, "Juan");
         TorreJugador torreJugador = new TorreJugador(3, jugador);
 
-        TorreEnemigo torreEnemigo = new TorreEnemigo(1, enemigo);
+        //TorreEnemigo torreEnemigo = new TorreEnemigo(1, enemigo);
 
         //torreJugador.Atacar(atacable, torreEnemigo);
         controljugador.AtacarEnemigo(enemigo);

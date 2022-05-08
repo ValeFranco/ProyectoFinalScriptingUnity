@@ -87,11 +87,15 @@ public class ControlJugador : MonoBehaviour
             Jugador.poder += enemigo.Poder;
             //enemigo.TorreEnemigo.ReducirAltura(enemigo);
             //torreJugador.AumentarAltura();
-            
 
-            if (enemigo.TorreEnemigo.altura == 0 || enemigo.TorreEnemigo.listaEnemigos.Count == 0)
+
+            if ( torreEnemigo.listaPisos.Count == 0)
             {
-                enemigo.torreEnemigo = null;
+                foreach(var item in torreEnemigo.listaPisos)
+                {
+                    torreEnemigo.RemoverPiso(item.altura);
+                }
+                
             }
             return victoria;
         }
