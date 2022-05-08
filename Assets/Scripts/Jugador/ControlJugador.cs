@@ -85,19 +85,19 @@ public class ControlJugador : MonoBehaviour
         {
             victoria = true;
             Jugador.poder += enemigo.Poder;
-            foreach (var item in GameManager.Instance.torreEnemigo.listaPisos)
+            foreach (var item in MyGameManager.Instance.torreEnemigo.listaPisos)
             {
                 if(item.enemigo == enemigo)
                 {
-                    GameManager.Instance.torreEnemigo.RemoverPiso(item.altura);
+                    MyGameManager.Instance.torreEnemigo.RemoverPiso(item.altura);
                 }
             }
 
 
-            if (GameManager.Instance.torreEnemigo.listaPisos.Count == 0) //esta es la condici?n donde evaluamos que la lista este vacia
+            if (MyGameManager.Instance.torreEnemigo.listaPisos.Count == 0) //esta es la condici?n donde evaluamos que la lista este vacia
             {
 
-                Destroy(GameManager.Instance.torreEnemigo);
+                Destroy(MyGameManager.Instance.torreEnemigo);
 
 
             }

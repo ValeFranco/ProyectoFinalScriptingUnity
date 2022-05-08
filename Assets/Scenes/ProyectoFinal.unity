@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 22270836}
   - component: {fileID: 22270839}
   m_Layer: 0
-  m_Name: Enemigo3
+  m_Name: Enemigo1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -973,7 +973,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44b65b2bcbb5d0a43a78cff69b1ad69e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  listaPisos: []
+  listaPisos:
+  - {fileID: 2085522503}
+  - {fileID: 907448786}
+  - {fileID: 1246944835}
 --- !u!1 &829821343 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7594297967384651036, guid: 63da6bca76a7b4538b5d5e6f4f85e0e8, type: 3}
@@ -1684,12 +1687,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1925554229}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17cd0242da7e8e2408515380ccfcb20d, type: 3}
+  m_Script: {fileID: 11500000, guid: 65bfdb60dbb63e240b484c17a5b15fb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  listaTorresEnemigo:
-  - {fileID: 11400000, guid: fff4c8ef04721d44db2747d92271806a, type: 2}
-  ganaste: {fileID: 1984327238}
+  torreEnemigo: {fileID: 0}
+  jugador: {fileID: 0}
+  ganaste: {fileID: 0}
 --- !u!4 &1925554231
 Transform:
   m_ObjectHideFlags: 0
@@ -1792,7 +1795,7 @@ GameObject:
   - component: {fileID: 2049425347}
   - component: {fileID: 2049425346}
   m_Layer: 0
-  m_Name: Enemigo1
+  m_Name: Enemigo3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
