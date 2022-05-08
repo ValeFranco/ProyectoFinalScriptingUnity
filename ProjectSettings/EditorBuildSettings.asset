@@ -6,8 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/ProyectoFinal.unity
+    path: Assets/Scenes/TestScenes/DoesPlayerPowerIncrease.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/ProyectoFinal.unity
+    guid: 849854d52e58ca541871eb1c4b92fce2
+  - enabled: 1
+    path: Assets/Scenes/MenuPrincipal.unity
+    guid: eac2730ea4e53044b898f0152f1c7f9a
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000

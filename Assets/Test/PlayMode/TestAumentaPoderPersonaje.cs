@@ -1,37 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.TestTools;
 
 public class TestAumentaPoderPersonaje
 {
+    string nombreEscena = "DoesPlayerPowerIncrease";
+
+    [SetUp]
+    public void SetUp()
+    {
+        EditorSceneManager.LoadScene(nombreEscena);
+    }
     [UnityTest]
     public IEnumerator TestAumentaPoderPersonajeWithEnumeratorPasses()
     {
-        Jugador jugador = ScriptableObject.CreateInstance<Jugador>();
-        ControlJugador controlJugador = new ControlJugador
-        {
-            jugador = jugador
-        };
-        controlJugador.jugador.basepoder = 13;
+        GameObject player;
+        player = GameObject.FindGameObjectWithTag("Player");
+        Assert.IsNotNull(player);
 
-        //HACER LO MISMO CON EL ENEMIGO == VELOR DE PODER MENOR 10
-        Enemigo enemigo = ScriptableObject.CreateInstance<Enemigo>();
-        ControlEnemigo controlEnemigo = new ControlEnemigo();
-        controlEnemigo.enemigo = enemigo;
-        controlEnemigo.enemigo.poder = 3;
-        
-        //ENFRENTAS AL JUGADOR Y A AL ENEMIGO
-        controlJugador.AtacarEnemigo(enemigo);
+        int playerOriginalPower = (int)player.GetComponent<ControlJugador>().jugador.poder;
 
+        yield return new WaitForSeconds(1f);
 
-    
-        
-        yield return null;
+        player.transform.position = new Vector2(1.4f, -3.1f);
 
-        Assert.AreEqual(16, controlJugador.jugador.poder);
-                      //VALOR ESPERADO, VALOR que tienes en realidad
-     //alo   
+        yield return new WaitForSeconds(1f);
+
+        Assert.Greater(player.GetComponent<ControlJugador>().jugador.poder, playerOriginalPower);
+    }
+    public void Teardown() //antes cargue la escena de nombre MandonWorldGen, en teardown uno la descarga y todos felices
+    {
+        EditorSceneManager.UnloadSceneAsync(nombreEscena);
     }
 }

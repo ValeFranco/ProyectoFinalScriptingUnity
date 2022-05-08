@@ -53,7 +53,7 @@ public class ControlJugador : MonoBehaviour
         {
             float step = velocidad * Time.deltaTime;
             transform.position = Vector2.MoveTowards(transform.position, posicionClick, step);
-
+            Debug.Log("posicion click  "+posicionClick);
         }
         else
         {
