@@ -35,7 +35,7 @@ public class ControlJugador : MonoBehaviour
         
         //condiciones iniciales Jugador:
         Jugador.vidas = 3;
-        Jugador.poder = Jugador.basepoder;
+        Jugador.poder = Jugador.basepoder; //se reinicia el poder del jugador al base
         
         barraCanvas = GameObject.FindObjectOfType<BarraVida>();
         posicionClick = this.transform.position;

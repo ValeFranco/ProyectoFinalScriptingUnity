@@ -10,19 +10,22 @@ public class TestAumentaPoderPersonaje
     public IEnumerator TestAumentaPoderPersonajeWithEnumeratorPasses()
     {
         Jugador jugador = ScriptableObject.CreateInstance<Jugador>();
-        //Jugador jugador = new Jugador(15, "Pruebita");
-        //TorreJugador torreJugador = new TorreJugador(3, jugador);
         ControlJugador controlJugador = new ControlJugador();
+        controlJugador.jugador = jugador;
+        controlJugador.jugador.basepoder = 13;
 
-        Enemigo enemigo = new Enemigo(3);
-      //  TorreEnemigo torreEnemigo = new TorreEnemigo(4, enemigo);
+       //HACER LO MISMO CON EL ENEMIGO == VELOR DE PODER MENOR 10
 
-        controlJugador.AtacarEnemigo(enemigo);
+        //ENFRENTAS AL JUGADOR Y A AL ENEMIGO
+        
+    
 
-        // //Use the Assert class to test conditions.
-        // //Use yield to skip a frame.
+        
+
+      
         yield return new WaitForSeconds(10);
 
-        Assert.AreEqual(18, controlJugador.Jugador.Poder);
+        //Assert.AreEqual(23, /*controlJugador.Jugador.poder*/);
+                      //VALOR ESPERADO, VALOR que tienes en realidad
     }
 }
