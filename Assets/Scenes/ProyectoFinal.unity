@@ -1077,8 +1077,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fa9362dedf62c74cb98fd9c3e0749c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemigo: {fileID: 1230723715}
-  altura: 2
+  enemigo: {fileID: 11400000, guid: 87b618f3851dd6443a5bb6f9175ba6bd, type: 2}
+  altura: 1
 --- !u!4 &920578409 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 244460867022264022, guid: 6e8325a57661ea6458d6236be377ce6c, type: 3}
@@ -1464,8 +1464,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fa9362dedf62c74cb98fd9c3e0749c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemigo: {fileID: 22270836}
-  altura: 3
+  enemigo: {fileID: 11400000, guid: 13259941884695948992b381e36f339f, type: 2}
+  altura: 2
 --- !u!1 &1267917663 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 244460867439928136, guid: 6e8325a57661ea6458d6236be377ce6c, type: 3}
@@ -1690,9 +1690,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65bfdb60dbb63e240b484c17a5b15fb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  torreEnemigo: {fileID: 0}
-  jugador: {fileID: 0}
-  ganaste: {fileID: 0}
+  torreEnemigo: {fileID: 733283443}
+  torreJugador: {fileID: 2069387431}
+  jugador: {fileID: 2113832647}
+  ganaste: {fileID: 1984327238}
 --- !u!4 &1925554231
 Transform:
   m_ObjectHideFlags: 0
@@ -1965,6 +1966,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2069387430}
+  - component: {fileID: 2069387431}
   m_Layer: 0
   m_Name: TorreJugador
   m_TagString: Untagged
@@ -1988,6 +1990,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2069387431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2069387429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20a5fca2192f2ad42b53ee31173c03d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2085522500
 GameObject:
   m_ObjectHideFlags: 0
@@ -2083,8 +2097,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fa9362dedf62c74cb98fd9c3e0749c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemigo: {fileID: 2049425347}
-  altura: 1
+  enemigo: {fileID: 11400000, guid: 0f57669efff5e254cb06f92ecd5ac6b2, type: 2}
+  altura: 0
 --- !u!1 &2113832644
 GameObject:
   m_ObjectHideFlags: 0

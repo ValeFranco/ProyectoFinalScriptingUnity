@@ -85,19 +85,22 @@ public class ControlJugador : MonoBehaviour
         {
             victoria = true;
             Jugador.poder += enemigo.Poder;
-            foreach (var item in MyGameManager.Instance.torreEnemigo.listaPisos)
+
+            print("ola2");
+            for (int i=0; i< MyGameManager.Instance.torreEnemigo.listaPisos.Count; i++)
             {
-                if(item.enemigo == enemigo)
+                if (Equals(MyGameManager.Instance.torreEnemigo.listaPisos[i].enemigo, enemigo))
                 {
-                    MyGameManager.Instance.torreEnemigo.RemoverPiso(item.altura);
+                    MyGameManager.Instance.torreEnemigo.RemoverPiso(i);
+                    print("ola");
                 }
             }
-
 
             if (MyGameManager.Instance.torreEnemigo.listaPisos.Count == 0) //esta es la condici?n donde evaluamos que la lista este vacia
             {
 
                 Destroy(MyGameManager.Instance.torreEnemigo);
+                MyGameManager.Instance.Ganaste();
 
 
             }

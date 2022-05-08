@@ -9,10 +9,12 @@ public class TorreEnemigo : MonoBehaviour
 
     public List<Pisos> ListaPisos { get => listaPisos; set => listaPisos = value; }
 
-    internal void RemoverPiso(int altura)
+    public void RemoverPiso(int altura)
     {
-        Destroy(ListaPisos[altura]);
+        Destroy(ListaPisos[altura].gameObject);
         ListaPisos.RemoveAt(altura);
+
+        print("ola");
 
     }
 

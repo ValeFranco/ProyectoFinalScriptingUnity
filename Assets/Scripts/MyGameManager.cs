@@ -4,28 +4,23 @@ using UnityEngine;
 
 public class MyGameManager : MonoBehaviour
 {
-     private static MyGameManager instance;
-    [SerializeField] internal TorreEnemigo torreEnemigo;
-    [SerializeField] internal TorreJugador torreJugador;
-    [SerializeField] private ControlJugador jugador;
+    public static MyGameManager Instance;
+    public TorreEnemigo torreEnemigo;
+    public TorreJugador torreJugador;
+    public ControlJugador jugador;
     public GameObject ganaste;
     
-    public static MyGameManager Instance
-    {
-        get
-        {
-            return instance;
-        }
-    }
+
     private void Awake()
     {
-        if (instance != null)
+        if (Instance != null)
         {
             Destroy(this);
         }
         else
         {
-            instance = null;
+            Instance = this;
+           
         }
     }
 
@@ -38,5 +33,10 @@ public class MyGameManager : MonoBehaviour
     void Update()
     {
 
+    }
+
+    public void Ganaste()
+    {
+        ganaste.SetActive(true);
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Pisos : MonoBehaviour
 {
-    [SerializeField] internal ControlEnemigo enemigo;
+    [SerializeField] public Enemigo enemigo;
 
     [SerializeField] public int altura;
    

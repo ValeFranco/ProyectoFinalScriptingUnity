@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TorreJugador
+public class TorreJugador : MonoBehaviour
 { uint altura;
     Jugador jugador;
     public List<object> listaJugador;
