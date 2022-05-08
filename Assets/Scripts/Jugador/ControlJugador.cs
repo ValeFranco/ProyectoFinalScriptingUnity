@@ -92,7 +92,7 @@ public class ControlJugador : MonoBehaviour
             if (GameManager.Instance.torreEnemigo.listaPisos.Count == 0) //esta es la condición donde evaluamos que la lista este vacia
             {
                 
-                GameManager.Instance.torreEnemigo.RemoverPiso(altura);              
+                //GameManager.Instance.torreEnemigo.RemoverPiso(altura);              
             }
             return victoria;
         }
