@@ -41,7 +41,9 @@ public class TorreJugador : MonoBehaviour
         Altura++;
     }
 
-
+    //-1.74
+    //-4.590354 otra monda
+    //suma:2.85
 
     public void AnadirATorre(object objeto)
     {
