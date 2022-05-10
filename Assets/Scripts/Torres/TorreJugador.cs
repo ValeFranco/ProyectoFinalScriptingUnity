@@ -11,6 +11,8 @@ public class TorreJugador : MonoBehaviour
 
     [SerializeField]
     public List<PisosJugador> listaPisosJugador;
+
+    public float deltaPosicion;
     
 
     public TorreJugador(int altura, Jugador jugador)
@@ -43,17 +45,16 @@ public class TorreJugador : MonoBehaviour
         //PisosJugador nuevoPiso = new PisosJugador();
 
         //listaPisosJugador.Add(nuevoPiso);
-
+        Vector3 posicionDestino = listaPisosJugador[altura].gameObject.transform.position;
         Vector2 posiciónPisoNuevo = new Vector2();
-        for(int i =0; i<listaPisosJugador.Count; i++)
-        {
-            posiciónPisoNuevo.y = listaPisosJugador[0].transform.position.y + listaPisosJugador[altura].transform.position.y;
-        }
-        
-        prefabPisos = GameObject.Instantiate(prefabPisos, posiciónPisoNuevo, transform.rotation);
-        altura++;
 
         
+       
+        posiciónPisoNuevo.y = listaPisosJugador[altura].transform.position.y + deltaPosicion;
+       
+        
+        Instantiate(prefabPisos, posiciónPisoNuevo, transform.rotation);
+        altura++;
 
     }
    
