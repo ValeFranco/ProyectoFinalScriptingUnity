@@ -92,6 +92,7 @@ public class ControlJugador : MonoBehaviour
                 if (Equals(MyGameManager.Instance.torreEnemigo.listaPisos[i].enemigo, enemigo))
                 {
                     MyGameManager.Instance.torreEnemigo.RemoverPiso(i);
+                    MyGameManager.Instance.torreJugador.AumentarAltura();
                     print("ola");
                 }
             }

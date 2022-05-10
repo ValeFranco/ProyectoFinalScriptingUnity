@@ -12,12 +12,12 @@ public class TestTorreContieneJugador
     {
 
         Jugador jugador = new Jugador(5, "Sebastian");
-        uint altura = 3;
+        int altura = 3;
         TorreJugador torreTest = new TorreJugador(altura, jugador);
         List<Jugador> listaJugadorTest = new List<Jugador>(3);
         listaJugadorTest.Add(jugador);
 
-        Assert.AreEqual(listaJugadorTest, torreTest.listaJugador);
+        Assert.AreEqual(listaJugadorTest, torreTest.Jugador);
 
     }
 }
