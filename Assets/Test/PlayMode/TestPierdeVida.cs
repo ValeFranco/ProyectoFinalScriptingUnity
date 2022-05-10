@@ -1,30 +1,40 @@
 using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.TestTools;
 
 public class TestPierdeVida
 {
-   
+    string nombreEscena = "DoesPlayerLoseLife";
+
+    [SetUp]
+    public void SetUp()
+    {
+        EditorSceneManager.LoadScene(nombreEscena);
+    }
+
     [UnityTest]
     public IEnumerator TestPierdeVidaWithEnumeratorPasses()
     {
-        Jugador jugador = ScriptableObject.CreateInstance<Jugador>();
-        ControlJugador controlJugador = new ControlJugador();
-        controlJugador.jugador = jugador;
-        controlJugador.jugador.Poder = 10;
+        GameObject player;
+        player = GameObject.FindGameObjectWithTag("Player");
+        Assert.IsNotNull(player);
 
-        Enemigo enemigo = ScriptableObject.CreateInstance<Enemigo>();
-        ControlEnemigo controlEnemigo = new ControlEnemigo();
-        controlEnemigo.enemigo = enemigo;
-        controlEnemigo.enemigo.poder = 13;
+        int playerOriginalLife = (int)player.GetComponent<ControlJugador>().jugador.vidas;
 
-        controlJugador.AtacarEnemigo(enemigo);
+        yield return new WaitForSeconds(1f);
 
-        yield return new WaitForSeconds(10);
-        Assert.AreEqual(2, controlJugador.jugador.vidas);
+        player.transform.position = new Vector2(1.4f, -3.1f);
 
+        yield return new WaitForSeconds(1f);
 
+        Assert.Greater(player.GetComponent<ControlJugador>().jugador.poder, playerOriginalLife);
     }
+        public void Teardown()
+        {
+            EditorSceneManager.UnloadSceneAsync(nombreEscena);
+        }
+    
 }
