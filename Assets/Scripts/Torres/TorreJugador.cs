@@ -13,7 +13,11 @@ public class TorreJugador : MonoBehaviour
     public List<PisosJugador> listaPisosJugador;
 
     public float deltaPosicion;
-    
+
+    private void Start()
+    {
+        altura = listaPisosJugador.Count - 1;
+    }
 
     public TorreJugador(int altura, Jugador jugador)
     {
@@ -45,17 +49,12 @@ public class TorreJugador : MonoBehaviour
         //PisosJugador nuevoPiso = new PisosJugador();
 
         //listaPisosJugador.Add(nuevoPiso);
-        Vector3 posicionDestino = listaPisosJugador[altura].gameObject.transform.position;
-        Vector2 posiciónPisoNuevo = new Vector2();
+        Vector3 posicionDestino = listaPisosJugador[altura].gameObject.transform.position + Vector3.up * deltaPosicion;
+        GameObject nuevoPiso = Instantiate(prefabPisos, posicionDestino, transform.rotation, transform);
 
-        
-       
-        posiciónPisoNuevo.y = listaPisosJugador[altura].transform.position.y + deltaPosicion;
-       
-        
-        Instantiate(prefabPisos, posiciónPisoNuevo, transform.rotation);
+        listaPisosJugador.Add(nuevoPiso.GetComponent<PisosJugador>());
         altura++;
-
+        listaPisosJugador[altura].altura = altura;
     }
    
 

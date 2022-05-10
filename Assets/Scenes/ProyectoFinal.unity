@@ -1677,7 +1677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   torreEnemigo: {fileID: 733283443}
-  torreJugador: {fileID: 0}
+  torreJugador: {fileID: 2069387431}
   jugador: {fileID: 2113832647}
   ganaste: {fileID: 1984327238}
 --- !u!4 &1925554231
@@ -1992,6 +1992,7 @@ MonoBehaviour:
   listaPisosJugador:
   - {fileID: 35971648}
   - {fileID: 500070468}
+  deltaPosicion: 2.85
 --- !u!1 &2085522500
 GameObject:
   m_ObjectHideFlags: 0
