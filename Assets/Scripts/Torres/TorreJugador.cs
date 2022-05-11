@@ -22,11 +22,8 @@ public class TorreJugador : MonoBehaviour
     public TorreJugador(int altura, Jugador jugador)
     {
         this.Altura = altura;
-        this.jugador = jugador;
-       
+        this.jugador = jugador;    
     }
-
-
     public Jugador Jugador { get => jugador; set => jugador = value; }
 
     internal int Altura
@@ -43,12 +40,8 @@ public class TorreJugador : MonoBehaviour
             }
         }
     }
-
     public void AumentarAltura()
     {
-        //PisosJugador nuevoPiso = new PisosJugador();
-
-        //listaPisosJugador.Add(nuevoPiso);
         Vector3 posicionDestino = listaPisosJugador[altura].gameObject.transform.position + Vector3.up * deltaPosicion;
         GameObject nuevoPiso = Instantiate(prefabPisos, posicionDestino, transform.rotation, transform);
 
@@ -57,10 +50,9 @@ public class TorreJugador : MonoBehaviour
         listaPisosJugador[altura].altura = altura;
     }
    
-
     //-1.74
-    //-4.590354 otra monda
-    //suma:2.85
+    //-4.590354 
+    //suma:2.85 - este sera el delta
 
 
 }

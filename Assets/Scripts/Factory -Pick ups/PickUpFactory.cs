@@ -6,37 +6,10 @@ using System;
 public class PickUpFactory : MonoBehaviour
 {
     [SerializeField] private GameObject buffPickUp;
-    //[SerializeField] private GameObject debuffPickUp;
-
-    //public PickUps Create(uint poder)
-    //{
-    //    switch (poder)
-    //    {
-    //        //case 100:
-    //        //    return Instantiate(buffPickUp);
-    //        //case 50:
-    //        //    return Instantiate(debuffPickUp);
-    //        //default:
-    //        //    throw new ArgumentOutOfRangeException($"El pickUp con el poder en {poder} no existe");
-    //    }
-        
-    //}
-
     public GameObject GetNewPickUP()
     {
         GameObject Instance = Instantiate(buffPickUp);
         return Instance;
 
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
