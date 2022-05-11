@@ -12,7 +12,7 @@ public class PickUpSpawner : MonoBehaviour
     //[SerializeField] private DeBuffFactory pickUpFactoryDeBuff;
 
     private GameObject lastPickUp;
-    int numero = Random.Range(0, 2);
+   // int numero = Random.Range(0, 2);
     
     private void Update()
     {
