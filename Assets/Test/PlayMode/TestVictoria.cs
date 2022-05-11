@@ -5,9 +5,9 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.TestTools;
 
-public class TestGanaContraObstaculo
+public class TestVictoria
 {
-    string nombreEscena = "GanarContraObstaculo";
+    string nombreEscena = "Victoria";
 
     [SetUp]
     public void SetUp()
@@ -15,7 +15,7 @@ public class TestGanaContraObstaculo
         EditorSceneManager.LoadScene(nombreEscena);
     }
     [UnityTest]
-    public IEnumerator TestGanaContraObstaculoWithEnumeratorPasses()
+    public IEnumerator TestVictoriaWithEnumeratorPasses()
     {
         GameObject player;
         player = GameObject.FindGameObjectWithTag("Player");
@@ -25,7 +25,23 @@ public class TestGanaContraObstaculo
 
         yield return new WaitForSeconds(1f);
 
-        player.transform.position = new Vector2(-5.4f, -0.1f);
+        player.transform.position = new Vector2(-6.4f, -0.2f);
+
+        yield return new WaitForSeconds(1f);
+
+        player.transform.position = new Vector2(-4.3f, 0.0f);
+
+        yield return new WaitForSeconds(2f);
+
+        player.transform.position = new Vector2(1.2f, -3.1f);
+
+        yield return new WaitForSeconds(2f);
+
+        player.transform.position = new Vector2(1.4f, 0.1f);
+
+        yield return new WaitForSeconds(2f);
+
+        player.transform.position = new Vector2(1.2f, 2.8f);
 
         yield return new WaitForSeconds(1f);
 
@@ -35,5 +51,4 @@ public class TestGanaContraObstaculo
     {
         EditorSceneManager.UnloadSceneAsync(nombreEscena);
     }
-
 }

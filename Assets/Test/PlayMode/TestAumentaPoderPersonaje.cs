@@ -31,7 +31,7 @@ public class TestAumentaPoderPersonaje
 
         Assert.Greater(player.GetComponent<ControlJugador>().jugador.poder, playerOriginalPower);
     }
-    public void Teardown() //antes cargue la escena de nombre MandonWorldGen, en teardown uno la descarga y todos felices
+    public void Teardown()
     {
         EditorSceneManager.UnloadSceneAsync(nombreEscena);
     }

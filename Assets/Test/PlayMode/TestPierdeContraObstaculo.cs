@@ -4,10 +4,9 @@ using NUnit.Framework;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.TestTools;
-
-public class TestGanaContraObstaculo
+public class TestPierdeContraObstaculo
 {
-    string nombreEscena = "GanarContraObstaculo";
+    string nombreEscena = "PierdeContraObstaculo";
 
     [SetUp]
     public void SetUp()
@@ -15,7 +14,7 @@ public class TestGanaContraObstaculo
         EditorSceneManager.LoadScene(nombreEscena);
     }
     [UnityTest]
-    public IEnumerator TestGanaContraObstaculoWithEnumeratorPasses()
+    public IEnumerator TestPierdeContraObstaculoWithEnumeratorPasses()
     {
         GameObject player;
         player = GameObject.FindGameObjectWithTag("Player");
@@ -29,11 +28,10 @@ public class TestGanaContraObstaculo
 
         yield return new WaitForSeconds(1f);
 
-        Assert.Greater(player.GetComponent<ControlJugador>().jugador.poder, playerOriginalPower);
+        Assert.AreNotEqual(player.GetComponent<ControlJugador>().jugador.poder, playerOriginalPower);
     }
     public void Teardown()
     {
         EditorSceneManager.UnloadSceneAsync(nombreEscena);
     }
-
 }

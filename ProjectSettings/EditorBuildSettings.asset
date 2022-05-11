@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ProyectoFinal.unity
     guid: 849854d52e58ca541871eb1c4b92fce2
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/Victoria.unity
+    guid: 1a0f4b018358e914ca1a239533b6f934
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
