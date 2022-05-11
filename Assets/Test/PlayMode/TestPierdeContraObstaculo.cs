@@ -5,9 +5,9 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.TestTools;
 
-public class TestAumentaPoderPersonaje
+public class TestPierdeContraObstaculo
 {
-    string nombreEscena = "DoesPlayerPowerIncrease";
+    string nombreEscena = "PerderContraObstaculo";
 
     [SetUp]
     public void SetUp()
@@ -15,7 +15,7 @@ public class TestAumentaPoderPersonaje
         EditorSceneManager.LoadScene(nombreEscena);
     }
     [UnityTest]
-    public IEnumerator TestAumentaPoderPersonajeWithEnumeratorPasses()
+    public IEnumerator TestGanaContraObstaculoWithEnumeratorPasses()
     {
         GameObject player;
         player = GameObject.FindGameObjectWithTag("Player");
@@ -25,11 +25,11 @@ public class TestAumentaPoderPersonaje
 
         yield return new WaitForSeconds(1f);
 
-        player.transform.position = new Vector2(1.4f, -3.1f);
+        player.transform.position = new Vector2(-5.5f, -0.11f);
 
         yield return new WaitForSeconds(1f);
 
-        Assert.Greater(player.GetComponent<ControlJugador>().jugador.poder, playerOriginalPower);
+        Assert.AreNotSame(player.GetComponent<ControlJugador>().jugador.poder, playerOriginalPower);
     }
     public void Teardown()
     {
