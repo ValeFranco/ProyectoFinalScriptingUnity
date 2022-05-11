@@ -12,6 +12,15 @@ EditorBuildSettings:
     path: Assets/Scenes/TestScenes/DoesPlayerLoseLife.unity
     guid: b9bce7008cddd4c4a8c2fd6f17ffd83a
   - enabled: 1
+    path: Assets/Scenes/TestScenes/GanarContraObstaculo.unity
+    guid: 1fea3d6a6eb1498409e39af0bc7624ce
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/PierdeContraObstaculo.unity
+    guid: db72deed678a13a4ca3afffbbd176680
+  - enabled: 1
+    path: Assets/Scenes/TestScenes/Combat.unity
+    guid: c133ff29fcad5c44ab72e28af33d267a
+  - enabled: 1
     path: Assets/Scenes/MenuPrincipal.unity
     guid: eac2730ea4e53044b898f0152f1c7f9a
   - enabled: 1

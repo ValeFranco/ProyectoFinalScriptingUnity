@@ -1,52 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.TestTools;
 
 public class TestCombate
 {
-    
+    string nombreEscena = "Combat";
+
+    [SetUp]
+    public void SetUp()
+    {
+        EditorSceneManager.LoadScene(nombreEscena);
+    }
     [UnityTest]
     public IEnumerator TestCombateWithEnumeratorPasses()
     {
-        ControladorJuego controladorJuego = new ControladorJuego();
+        GameObject player;
+        player = GameObject.FindGameObjectWithTag("Player");
+        Assert.IsNotNull(player);
 
-        List<Torre> torres = new List<Torre>(2);
+        int playerOriginalPower = (int)player.GetComponent<ControlJugador>().jugador.poder;
 
-        //Atacable atacable1 = new Atacable(false, 2);
-        //Atacable atacable2 = new Atacable(false, 3);
-        //Atacable atacable3 = new Atacable(false, 1);
-        //Atacable atacable4 = new Atacable(false, 4);
+        yield return new WaitForSeconds(1f);
 
-        //TorreEnemigo torreEnemigo1 = new TorreEnemigo(2, atacable1);
-        //TorreEnemigo torreEnemigo2 = new TorreEnemigo(2, atacable2);
+        player.transform.position = new Vector2(1.4f, -3.0f);
 
-        //torreEnemigo1.listaAtacable.Add(atacable3);
-        //torreEnemigo2.listaAtacable.Add(atacable4);
+        yield return new WaitForSeconds(1f);
 
-        Jugador jugador = new Jugador(6, "Valentina");
-        TorreJugador torreJugador = new TorreJugador(3, jugador);
-        controladorJuego.torreJugador = torreJugador;
+        player.transform.position = new Vector2(1.0f, -0.2f);
 
-        //juego.listaTorres.Add(torreEnemigo1);
-        //juego.listaTorres.Add(torreEnemigo2);
+        yield return new WaitForSeconds(1f);
 
+        player.transform.position = new Vector2(1.1f, 2.7f);
 
-        //jugador.Atacar(atacable1, torreEnemigo1);
-        //jugador.Atacar(atacable3, torreEnemigo1);
+        yield return new WaitForSeconds(1f);
 
-        //juego.LimpiarLista();
-
-        //jugador.Atacar(atacable2, torreEnemigo2);
-        //jugador.Atacar(atacable4, torreEnemigo2);
-
-        string mensaje = controladorJuego.LimpiarLista();
-
-        yield return new WaitForSeconds(10);
-        Assert.AreEqual("Pasaste de nivel", mensaje);
-        // Use the Assert class to test conditions.
-        // Use yield to skip a frame.
-        
+        Assert.AreNotEqual(player.GetComponent<ControlJugador>().jugador.poder, playerOriginalPower);
+    }
+    public void Teardown()
+    {
+        EditorSceneManager.UnloadSceneAsync(nombreEscena);
     }
 }
