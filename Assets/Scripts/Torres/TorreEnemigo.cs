@@ -13,9 +13,25 @@ public class TorreEnemigo : MonoBehaviour
 
     public void RemoverPiso(int altura)
     {
+        //Destroy(ListaPisos[altura].gameObject);
+
+        StartCoroutine(DetenerCaida(altura));
+
+       
+
+       
+
+        print("ola");
+
+    }
+
+    IEnumerator DetenerCaida(int altura)
+    {
         Destroy(ListaPisos[altura].gameObject);
 
-        for (int i = altura+1 ; i < listaPisos.Count; i++)
+        yield return new WaitForSeconds(2f);
+
+        for (int i = altura + 1; i < listaPisos.Count; i++)
         {
 
             Vector3 posicionDestino = listaPisos[i].gameObject.transform.position;
@@ -26,9 +42,18 @@ public class TorreEnemigo : MonoBehaviour
 
         ListaPisos.RemoveAt(altura);
 
-        print("ola");
+
+        if (MyGameManager.Instance.torreEnemigo.listaPisos.Count == 0) //esta es la condici?n donde evaluamos que la lista este vacia
+        {
+
+            Destroy(MyGameManager.Instance.torreEnemigo);
+            MyGameManager.Instance.Ganaste();
+
+
+        }
+
 
     }
 
-   
+
 }

@@ -97,14 +97,7 @@ public class ControlJugador : MonoBehaviour
                 }
             }
 
-            if (MyGameManager.Instance.torreEnemigo.listaPisos.Count == 0) //esta es la condici?n donde evaluamos que la lista este vacia
-            {
-
-                Destroy(MyGameManager.Instance.torreEnemigo);
-                MyGameManager.Instance.Ganaste();
-
-
-            }
+          
             return victoria;
         }
 
