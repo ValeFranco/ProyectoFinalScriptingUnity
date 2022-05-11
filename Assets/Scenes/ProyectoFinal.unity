@@ -961,6 +961,7 @@ MonoBehaviour:
   - {fileID: 907448786}
   - {fileID: 1246944835}
 <<<<<<< HEAD
+<<<<<<< HEAD
   deltaPosicion: 0
 --- !u!1 &765501891
 GameObject:
@@ -1009,6 +1010,8 @@ Transform:
 =======
   deltaPosicion: 2.85
 >>>>>>> ea4692592d174c77317ff6cc343e50febd76dc1d
+=======
+>>>>>>> parent of 5c5cdaf (Boton)
 --- !u!1 &829821343 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7594297967384651036, guid: 63da6bca76a7b4538b5d5e6f4f85e0e8, type: 3}
@@ -1414,7 +1417,6 @@ GameObject:
   - component: {fileID: 1240580577}
   - component: {fileID: 1240580579}
   - component: {fileID: 1240580578}
-  - component: {fileID: 1240580580}
   m_Layer: 5
   m_Name: "Bot\xF3n"
   m_TagString: Untagged
@@ -1479,6 +1481,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1240580576}
   m_CullTransparentMesh: 1
+<<<<<<< HEAD
 --- !u!114 &1240580580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1541,6 +1544,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+=======
+>>>>>>> parent of 5c5cdaf (Boton)
 --- !u!1 &1246944832
 GameObject:
   m_ObjectHideFlags: 0
@@ -1889,7 +1894,6 @@ GameObject:
   - component: {fileID: 1802882169}
   - component: {fileID: 1802882171}
   - component: {fileID: 1802882170}
-  - component: {fileID: 1802882172}
   m_Layer: 5
   m_Name: "Bot\xF3n (1)"
   m_TagString: Untagged
@@ -1954,6 +1958,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1802882168}
   m_CullTransparentMesh: 1
+<<<<<<< HEAD
 --- !u!114 &1802882172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2016,6 +2021,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+=======
+>>>>>>> parent of 5c5cdaf (Boton)
 --- !u!1 &1925554229
 GameObject:
   m_ObjectHideFlags: 0
