@@ -5,7 +5,7 @@
   - Juan Manuel Arciniegas
   - Sofia Diaz Zapata
   - Sebastian Velasquez
-  - Pablo Cataño
+
 
 # Aclaraciones del avance:
 
