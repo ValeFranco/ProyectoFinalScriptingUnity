@@ -963,6 +963,7 @@ MonoBehaviour:
   - {fileID: 2085522503}
   - {fileID: 907448786}
   - {fileID: 1246944835}
+  deltaPosicion: 2.85
 --- !u!1 &829821343 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7594297967384651036, guid: 63da6bca76a7b4538b5d5e6f4f85e0e8, type: 3}

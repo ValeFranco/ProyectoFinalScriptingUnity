@@ -15,18 +15,15 @@ public class TorreEnemigo : MonoBehaviour
     {
         Destroy(ListaPisos[altura].gameObject);
 
-        for (int i = altura+1 ; i < listaPisos.Count; i++)
+        for (int i = altura + 1; i < listaPisos.Count; i++)
         {
+
+            print("wenas");
 
             Vector3 posicionDestino = listaPisos[i].gameObject.transform.position;
 
             listaPisos[i].gameObject.transform.position = posicionDestino + (Vector3.down * deltaPosicion);
 
-            //Vector3 posicionEnemigo = listaPisos[i].gameObject.GetComponent<ControlEnemigo>().gameObject.transform.position;
-
-
-            //listaPisos[i].gameObject.GetComponent<ControlEnemigo>().gameObject.transform.position = posicionEnemigo +
-                //(Vector3.down * deltaPosicion);
 
         }
 
