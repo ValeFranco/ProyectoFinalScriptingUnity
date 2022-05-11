@@ -10,8 +10,7 @@ public class TestLimpiarLista
     [UnityTest]
     public IEnumerator TestLimpiarListaWithEnumeratorPasses()
     {
-        ControladorJuego controladorJuego = new ControladorJuego();
-        List<Torre> torreEsperada = new List<Torre>(0);
+        
         //Atacable atacable = new Atacable(2);
 
         Enemigo enemigo = new Enemigo(2);
@@ -24,10 +23,10 @@ public class TestLimpiarLista
         controlJugador.AtacarEnemigo(enemigo);
        
 
-        controladorJuego.LimpiarLista();
+        
 
         yield return new WaitForSeconds(10);
-        Assert.AreEqual(torreEsperada, controladorJuego.listaTorresEnemigo);
+        
        
     }
 }
