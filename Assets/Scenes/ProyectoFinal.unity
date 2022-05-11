@@ -123,6 +123,64 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &5643433
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5643436}
+  - component: {fileID: 5643435}
+  - component: {fileID: 5643434}
+  m_Layer: 0
+  m_Name: Factory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &5643434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5643433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcc7415dd88f8f543b2623bcbcda1514, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debuffPickUp: {fileID: 832938681638335304, guid: dc9bd8548a69fe344845570474c63b65, type: 3}
+--- !u!114 &5643435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5643433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2389742ccbfe6d84ab96b798c85f85dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buffPickUp: {fileID: 1365471797644861937, guid: 46fff6a94e6cfec4ebd7e43d8386d1e4, type: 3}
+--- !u!4 &5643436
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5643433}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.11394116, y: 0.12695664, z: -2901.5642}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &22270835
 GameObject:
   m_ObjectHideFlags: 0
@@ -1767,6 +1825,65 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1802882168}
   m_CullTransparentMesh: 1
+--- !u!1 &1868263519
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1868263522}
+  - component: {fileID: 1868263521}
+  - component: {fileID: 1868263520}
+  m_Layer: 0
+  m_Name: Cliente
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1868263520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868263519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 045171d62de584948a8719dd67bc57fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buffFactory: {fileID: 5643435}
+  debuffFactory: {fileID: 5643434}
+--- !u!114 &1868263521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868263519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c55d9ddae22604bb79c17973dc61b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  factory: {fileID: 1868263520}
+--- !u!4 &1868263522
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1868263519}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.11394116, y: 0.12695664, z: -2901.5642}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1925554229
 GameObject:
   m_ObjectHideFlags: 0
@@ -2022,7 +2139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2063732224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2035,7 +2152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7c55d9ddae22604bb79c17973dc61b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickUpFactory: {fileID: 2063732225}
+  factory: {fileID: 0}
 --- !u!114 &2063732225
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2048,8 +2165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2389742ccbfe6d84ab96b798c85f85dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buffPickUp: {fileID: 1365471797644861943, guid: 46fff6a94e6cfec4ebd7e43d8386d1e4, type: 3}
-  debuffPickUp: {fileID: 832938681638335306, guid: dc9bd8548a69fe344845570474c63b65, type: 3}
+  buffPickUp: {fileID: 0}
 --- !u!4 &2063732226
 Transform:
   m_ObjectHideFlags: 0
