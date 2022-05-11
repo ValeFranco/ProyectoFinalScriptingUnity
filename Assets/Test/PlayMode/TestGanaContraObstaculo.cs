@@ -1,40 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework;
-using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.TestTools;
 
 public class TestGanaContraObstaculo
 {
-    string nombreEscena = "GanarContraObstaculo";
-
-    [SetUp]
-    public void SetUp()
-    {
-        EditorSceneManager.LoadScene(nombreEscena);
-    }
     [UnityTest]
     public IEnumerator TestGanaContraObstaculoWithEnumeratorPasses()
     {
-        GameObject player;
-        player = GameObject.FindGameObjectWithTag("Player");
-        Assert.IsNotNull(player);
+        Jugador jugador = new Jugador(15, "Pruebita");
+       // TorreJugador torreJugador = new TorreJugador(3, jugador);
 
-        int playerOriginalPower = (int)player.GetComponent<ControlJugador>().jugador.poder;
+        ControlJugador controlJugador = new ControlJugador();
 
-        yield return new WaitForSeconds(1f);
+        Enemigo enemigo = new Enemigo(3);
+        
+        //TorreEnemigo torreEnemigo = new TorreEnemigo(4, enemigo);
 
-        player.transform.position = new Vector2(-5.5f, -0.11f);
+        controlJugador.AtacarEnemigo(enemigo);
 
-        yield return new WaitForSeconds(1f);
+        //Use the Assert class to test conditions.
+        //Use yield to skip a frame.
+        yield return new WaitForSeconds(10);
 
-        Assert.Greater(player.GetComponent<ControlJugador>().jugador.poder, playerOriginalPower);
+        Assert.AreEqual(18, controlJugador.jugador.Poder);
     }
-    public void Teardown()
-    {
-        EditorSceneManager.UnloadSceneAsync(nombreEscena);
-    }
-}
     
-
+}
