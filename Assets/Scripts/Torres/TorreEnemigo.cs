@@ -22,12 +22,6 @@ public class TorreEnemigo : MonoBehaviour
 
             listaPisos[i].gameObject.transform.position = posicionDestino + (Vector3.down * deltaPosicion);
 
-            //Vector3 posicionEnemigo = listaPisos[i].gameObject.GetComponent<ControlEnemigo>().gameObject.transform.position;
-
-
-            //listaPisos[i].gameObject.GetComponent<ControlEnemigo>().gameObject.transform.position = posicionEnemigo +
-                //(Vector3.down * deltaPosicion);
-
         }
 
         ListaPisos.RemoveAt(altura);
