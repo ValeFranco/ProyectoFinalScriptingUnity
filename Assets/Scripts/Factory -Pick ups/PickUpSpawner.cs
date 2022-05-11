@@ -2,38 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public class PickUpSpawner : MonoBehaviour   //cliente
+public class PickUpSpawner : MonoBehaviour
 {
-    [SerializeField] FactoryFacade factory;
+    [SerializeField] private PickUpFactory pickUpFactory;
 
-    private GameObject lastPickUp;
-    int numero = Random.Range(0, 2);
-    
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.C))
+        if (Input.GetKey(KeyCode.Alpha1))
         {
-            GetPickUp(PickUpType.Buff);
-        }          
-        else if (Input.GetKeyDown(KeyCode.D))
+            pickUpFactory.Create(100);
+        }
+        else if (Input.GetKey(KeyCode.Alpha2))
         {
-            GetPickUp(PickUpType.Debuff);
+            pickUpFactory.Create(50);
         }
     }
-    private void Start()
-    {
-        
-    }
-
-    private void GetPickUp(PickUpType pickUpType)
-    {
-        if (lastPickUp != null)
-            Destroy(lastPickUp);
-
-        lastPickUp = factory?.CrearNuevoPickUp(pickUpType);
-        Vector3 posicionDestino = new Vector3(-5, 2, 0);
-        lastPickUp.transform.position = posicionDestino;
-    }
-
 }
