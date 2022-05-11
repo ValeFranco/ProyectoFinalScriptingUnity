@@ -9,41 +9,32 @@ public class TorreEnemigo : MonoBehaviour
 
     public List<Pisos> ListaPisos { get => listaPisos; set => listaPisos = value; }
 
+    public float deltaPosicion;
+
     public void RemoverPiso(int altura)
     {
         Destroy(ListaPisos[altura].gameObject);
+
+        for (int i = altura+1 ; i < listaPisos.Count; i++)
+        {
+
+            Vector3 posicionDestino = listaPisos[i].gameObject.transform.position;
+
+            listaPisos[i].gameObject.transform.position = posicionDestino + (Vector3.down * deltaPosicion);
+
+            //Vector3 posicionEnemigo = listaPisos[i].gameObject.GetComponent<ControlEnemigo>().gameObject.transform.position;
+
+
+            //listaPisos[i].gameObject.GetComponent<ControlEnemigo>().gameObject.transform.position = posicionEnemigo +
+                //(Vector3.down * deltaPosicion);
+
+        }
+
         ListaPisos.RemoveAt(altura);
 
         print("ola");
 
     }
 
-    //public uint altura;
-
-    //public uint Altura { get => altura; private set => altura = value; }
-
-    //public uint Altura
-    //{
-    //    get => altura;
-
-    //    private set
-    //    {
-    //        if (value != 0)
-    //        {
-    //            altura = value;
-    //        }
-    //        else
-    //        {
-    //            throw new UnityException("La altura de la torre no puede ser cero");
-    //        }
-    //    }
-    //}
-
-    //public TorreEnemigo(uint altura, Enemigo enemigo)
-    //{
-    //    this.Altura= altura;
-    //    listaEnemigos = new List<Enemigo>((int)altura);
-    //    listaEnemigos.Add(enemigo);
-
-    //}
+   
 }
